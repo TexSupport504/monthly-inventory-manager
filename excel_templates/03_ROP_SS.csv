@@ -1,0 +1,4 @@
+SKU,Description,Avg_Daily_Demand,Lead_Time_Days,Demand_StdDev,Safety_Stock,ROP,Stock_Available,Days_Until_Stockout,Action_Required
+SKU001,Branded Pen,2.5,14,0.8,15,50,150,60,OK
+SKU002,Small Shipping Box,1.8,7,0.6,8,21,75,42,OK
+SKU003,T-Shirt Large,0.5,21,0.3,12,23,25,50,MONITOR

@@ -1,0 +1,8 @@
+Metric,Current,Target,Status,Formula_Notes
+Total Revenue,0,100000.0,⚠️,"SUMIF(PnL!A:A,"">=""&DATE(YEAR(TODAY()),MONTH(TODAY()),1),PnL!E:E)"
+Gross Margin %,0,0.35,⚠️,"SUMIF(PnL!A:A,"">=""&DATE(YEAR(TODAY()),MONTH(TODAY()),1),PnL!F:F)/SUMIF(PnL!A:A,"">=""&DATE(YEAR(TODAY()),MONTH(TODAY()),1),PnL!E:E)"
+GMROI,0,3.0,⚠️,AVERAGE(PnL!G:G)
+Sell-Through %,0,0.75,⚠️,AVERAGE(PnL!H:H)
+Days of Supply,0,30.0,⚠️,AVERAGE(Plan_Buy!G:G)
+Stockout Risk SKUs,0,0.0,⚠️,"COUNTIFS(ROP_SS!H:H,""<0"")"
+Shrink %,0,0.02,⚠️,"ABS(SUMIF(Shrink!A:A,"">=""&DATE(YEAR(TODAY()),MONTH(TODAY()),1),Shrink!G:G))"

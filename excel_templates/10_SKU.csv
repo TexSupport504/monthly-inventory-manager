@@ -1,0 +1,11 @@
+SKU,Description,Category,Cost,Price,Lead_Time_Days,Supplier,UOM,Active,Min_Order_Qty,Notes
+SKU001,Branded Pen - Black,Promotional,0.5,2.0,14,PromoCorp,EA,Y,100,
+SKU002,Small Shipping Box 10x8x6,Packaging,1.25,3.5,7,BoxCo,EA,Y,50,
+SKU003,T-Shirt Large Logo,Apparel,8.0,25.0,21,ApparelPlus,EA,Y,25,
+SKU004,Bubble Wrap Roll 12inch,Packaging,15.0,35.0,10,PackingSupply,ROLL,Y,10,
+SKU005,Coffee Mug Ceramic,Promotional,3.25,12.0,14,PromoCorp,EA,Y,48,
+SKU006,Shipping Labels 4x6 Roll,Labels,12.5,28.0,14,LabelMaker,ROLL,Y,20,
+SKU007,Polo Shirt Medium,Apparel,18.0,45.0,21,ApparelPlus,EA,Y,25,
+SKU008,Packaging Tape 2inch,Packaging,2.25,6.5,7,PackingSupply,ROLL,Y,12,
+SKU009,Notebook Leather,Promotional,7.5,18.0,14,PromoCorp,EA,Y,24,
+SKU010,Priority Overnight Envelopes,Shipping,0.85,2.5,5,ShippingCorp,EA,Y,100,

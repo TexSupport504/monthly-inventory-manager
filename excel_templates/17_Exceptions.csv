@@ -1,0 +1,3 @@
+Exception_ID,Date_Found,Source_Sheet,Source_Row,Exception_Type,Description,Severity,Resolution_Required,Status,Notes
+EXC001,2025-08-20,Forms_Inbox,5,Invalid SKU,SKU 'XYZ999' not found in master,HIGH,Verify and correct SKU,OPEN,Check with counter
+EXC002,2025-08-20,Counts_Manual,12,Duplicate Entry,Same count submitted twice,MEDIUM,Remove duplicate,RESOLVED,Kept latest entry

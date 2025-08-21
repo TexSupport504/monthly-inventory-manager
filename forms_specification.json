@@ -1,0 +1,92 @@
+{
+  "form_title": "Inventory Count Form",
+  "fields": [
+    {
+      "name": "checkpoint",
+      "type": "choice",
+      "required": true,
+      "options": [
+        "BOM",
+        "MID",
+        "EOM"
+      ],
+      "description": "Inventory checkpoint period"
+    },
+    {
+      "name": "location",
+      "type": "choice",
+      "required": true,
+      "options": [
+        "in_store",
+        "back_of_store"
+      ],
+      "description": "Physical location of count"
+    },
+    {
+      "name": "date_counted",
+      "type": "date",
+      "required": true,
+      "default": "today",
+      "description": "Date when count was performed"
+    },
+    {
+      "name": "counter_id",
+      "type": "text",
+      "required": true,
+      "description": "Employee ID or initials"
+    },
+    {
+      "name": "sku",
+      "type": "choice",
+      "required": true,
+      "source": "sku_master",
+      "description": "Product SKU code"
+    },
+    {
+      "name": "qty",
+      "type": "number",
+      "required": true,
+      "validation": ">=0",
+      "description": "Quantity counted"
+    },
+    {
+      "name": "uom",
+      "type": "choice",
+      "default": "EA",
+      "options": [
+        "EA",
+        "BOX",
+        "ROLL",
+        "PACK"
+      ],
+      "description": "Unit of measure"
+    },
+    {
+      "name": "notes",
+      "type": "text",
+      "required": false,
+      "description": "Comments or observations"
+    },
+    {
+      "name": "photo",
+      "type": "file_upload",
+      "required": false,
+      "description": "Photo of counted inventory"
+    }
+  ],
+  "power_automate_flow": {
+    "trigger": "When a new response is submitted",
+    "actions": [
+      "Get response details",
+      "Compose unique key",
+      "Validate required fields",
+      "Add row to Excel table (Forms_Inbox!tblFormsRaw)",
+      "Send confirmation email"
+    ]
+  },
+  "excel_integration": {
+    "target_table": "Forms_Inbox!tblFormsRaw",
+    "power_query": "qry_Forms_Normalize",
+    "destination": "Counts_Entry!tblCounts"
+  }
+}

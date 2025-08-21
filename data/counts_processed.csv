@@ -1,0 +1,4 @@
+asof_date,checkpoint,location,sku,qty,uom,counter_id,notes,unique_key
+2025-08-01,BOM,in_store,SKU001,150,EA,JD001,,20250801|BOM|in_store|SKU001|JD001
+2025-08-01,BOM,back_of_store,SKU001,500,EA,JD001,,20250801|BOM|back_of_store|SKU001|JD001
+2025-08-15,MID,in_store,SKU001,135,EA,SM002,,20250815|MID|in_store|SKU001|SM002

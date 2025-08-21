@@ -1,0 +1,5 @@
+Event_ID,Account,Name,Anchor_Venue,Span_of_Attendees,In_Date,Start_DateTime,End_DateTime,Out_Date,Est_Attendance,Contact,Salesperson,Actual_Attendance,Status,Conversion_Rate,Attach_Rate,Notes
+EVT001,Safari Club International,Q4 Tech Conference 2025,Main Hall,400-600,2025-09-14 06:00:00,2025-09-15 09:00:00,2025-09-15 18:00:00,2025-09-16 18:00:00,500,Rush Stefanie,Johnson Sarah,,Planned,,,
+EVT002,Event Marketing Co,Product Launch,Booth A,200-300,2025-09-19 08:00:00,2025-09-20 10:00:00,2025-09-20 16:00:00,2025-09-20 22:00:00,250,Smith John,Davis Mike,,Planned,,,
+EVT003,Training Corp,Training Workshop,Room B,80-120,2025-09-24 16:00:00,2025-09-25 08:00:00,2025-09-25 17:00:00,2025-09-25 20:00:00,100,Brown Lisa,Wilson Tom,,Planned,,,
+EVT004,Holiday Events LLC,Holiday Event,Main Lobby,700-900,2025-12-14 10:00:00,2025-12-15 14:00:00,2025-12-15 20:00:00,2025-12-16 12:00:00,800,Taylor Kim,Anderson Pat,,Planned,,,

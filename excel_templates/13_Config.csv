@@ -1,0 +1,11 @@
+Parameter,Value,Description
+Z Service Level,1.65,Standard deviations for safety stock
+Default Lead Time Days,14,When SKU lead time is missing
+Target Days of Supply,30,Inventory planning horizon
+Max Cash Per Order,50000,Budget constraint per purchase order
+Shrink Threshold %,0.05,Flag shrink above this percentage
+Low DoS Warning,15,Days of supply warning threshold
+Default Event Conversion,0.15,Default event conversion rate
+Default Attach Rate,1.2,Default items per transaction
+Forms Integration Enabled,TRUE,Enable Microsoft Forms intake
+Manual Entry Enabled,TRUE,Enable manual transcription

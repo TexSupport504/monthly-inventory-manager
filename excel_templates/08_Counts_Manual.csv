@@ -1,0 +1,4 @@
+Entry_ID,Date_Counted,Checkpoint,Location,SKU,Description,Qty,UOM,Counter_ID,Notes,Status,Validated
+MANUAL_001,2025-08-20,BOM,in_store,,[Auto-populated],0,EA,,,Draft,False
+MANUAL_002,,MID,back_of_store,,[Auto-populated],0,EA,,,Draft,False
+MANUAL_003,,EOM,in_store,,[Auto-populated],0,EA,,,Draft,False

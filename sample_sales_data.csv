@@ -1,0 +1,4 @@
+date,sku,units_sold,revenue,event_id,channel
+2025-08-02,SKU001,12,24.0,,Walk-in
+2025-08-06,SKU001,15,30.0,EVT002,Event
+2025-08-03,SKU002,15,52.5,,Bulk

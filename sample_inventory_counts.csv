@@ -1,0 +1,4 @@
+asof_date,checkpoint,location,sku,qty,uom,counter_id,notes
+2025-08-01,BOM,in_store,SKU001,150,EA,JD001,Fresh stock from delivery
+2025-08-01,BOM,back_of_store,SKU001,500,EA,JD001,Reserve inventory
+2025-08-15,MID,in_store,SKU001,135,EA,SM002,Some sales activity
