@@ -1,0 +1,250 @@
+﻿{
+    "pages":  [
+                  {
+                      "layout":  {
+                                     "kpi_row":  {
+                                                     "height":  100,
+                                                     "cards":  4
+                                                 },
+                                     "main_content":  {
+                                                          "height":  680
+                                                      },
+                                     "footer":  {
+                                                    "height":  180
+                                                },
+                                     "header":  {
+                                                    "height":  120,
+                                                    "background":  "#003366"
+                                                }
+                                 },
+                      "name":  "Executive Overview",
+                      "visuals":  [
+                                      {
+                                          "position":  {
+                                                           "y":  120,
+                                                           "w":  240,
+                                                           "h":  100,
+                                                           "x":  0
+                                                       },
+                                          "type":  "card",
+                                          "measure":  "GMROI"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  120,
+                                                           "w":  240,
+                                                           "h":  100,
+                                                           "x":  240
+                                                       },
+                                          "type":  "card",
+                                          "measure":  "Total_Revenue"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  120,
+                                                           "w":  240,
+                                                           "h":  100,
+                                                           "x":  480
+                                                       },
+                                          "type":  "card",
+                                          "measure":  "Sell_Through_Rate"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  120,
+                                                           "w":  240,
+                                                           "h":  100,
+                                                           "x":  720
+                                                       },
+                                          "type":  "card",
+                                          "measure":  "Days_of_Supply"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  220,
+                                                           "w":  576,
+                                                           "h":  400,
+                                                           "x":  0
+                                                       },
+                                          "type":  "waterfall",
+                                          "measure":  "Total_Revenue"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  220,
+                                                           "w":  384,
+                                                           "h":  400,
+                                                           "x":  576
+                                                       },
+                                          "name":  "Risk_Alerts",
+                                          "type":  "table"
+                                      }
+                                  ]
+                  },
+                  {
+                      "name":  "Event Impact Analysis",
+                      "visuals":  [
+                                      {
+                                          "position":  {
+                                                           "y":  120,
+                                                           "w":  480,
+                                                           "h":  300,
+                                                           "x":  0
+                                                       },
+                                          "x_axis":  "est_attendance",
+                                          "type":  "scatter",
+                                          "y_axis":  "actual_revenue"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  120,
+                                                           "w":  432,
+                                                           "h":  300,
+                                                           "x":  480
+                                                       },
+                                          "bars":  "Pre_Event_Inventory",
+                                          "type":  "combo",
+                                          "line":  "Sales"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  420,
+                                                           "w":  432,
+                                                           "h":  300,
+                                                           "x":  0
+                                                       },
+                                          "stages":  4,
+                                          "type":  "funnel"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  420,
+                                                           "w":  480,
+                                                           "h":  300,
+                                                           "x":  432
+                                                       },
+                                          "type":  "column",
+                                          "comparison":  "before_after"
+                                      }
+                                  ]
+                  },
+                  {
+                      "name":  "Inventory Intelligence",
+                      "visuals":  [
+                                      {
+                                          "position":  {
+                                                           "y":  120,
+                                                           "w":  960,
+                                                           "h":  200,
+                                                           "x":  0
+                                                       },
+                                          "columns":  "location",
+                                          "rows":  "category",
+                                          "type":  "matrix"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  320,
+                                                           "w":  576,
+                                                           "h":  300,
+                                                           "x":  0
+                                                       },
+                                          "name":  "Reorder_Dashboard",
+                                          "type":  "table"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  320,
+                                                           "w":  336,
+                                                           "h":  150,
+                                                           "x":  576
+                                                       },
+                                          "type":  "gauge",
+                                          "measure":  "Service_Level"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  470,
+                                                           "w":  336,
+                                                           "h":  150,
+                                                           "x":  576
+                                                       },
+                                          "type":  "line",
+                                          "measure":  "Shrink_Variance_Percent"
+                                      }
+                                  ]
+                  },
+                  {
+                      "name":  "Financial Performance",
+                      "visuals":  [
+                                      {
+                                          "categories":  "Promotional,Apparel,Packaging,Shipping",
+                                          "position":  {
+                                                           "y":  120,
+                                                           "w":  960,
+                                                           "h":  200,
+                                                           "x":  0
+                                                       },
+                                          "type":  "stacked_bar"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  320,
+                                                           "w":  576,
+                                                           "h":  300,
+                                                           "x":  0
+                                                       },
+                                          "target":  3,
+                                          "type":  "line",
+                                          "measure":  "GMROI"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  320,
+                                                           "w":  336,
+                                                           "h":  150,
+                                                           "x":  576
+                                                       },
+                                          "x_axis":  "Days_of_Supply",
+                                          "type":  "scatter",
+                                          "y_axis":  "Cash_Flow"
+                                      },
+                                      {
+                                          "position":  {
+                                                           "y":  470,
+                                                           "w":  336,
+                                                           "h":  150,
+                                                           "x":  576
+                                                       },
+                                          "name":  "Investment_Planning",
+                                          "type":  "table"
+                                      }
+                                  ]
+                  }
+              ],
+    "brand_theme":  "MCCNO_Executive",
+    "filters":  [
+                    {
+                        "field":  "Date[MonthName]",
+                        "position":  "top",
+                        "type":  "slicer"
+                    },
+                    {
+                        "field":  "Events[event_type]",
+                        "position":  "top",
+                        "type":  "slicer"
+                    },
+                    {
+                        "field":  "Inventory[category]",
+                        "position":  "top",
+                        "type":  "slicer"
+                    },
+                    {
+                        "field":  "Inventory[location]",
+                        "position":  "top",
+                        "type":  "slicer"
+                    }
+                ],
+    "version":  "1.0",
+    "dashboard_name":  "MCCNO Executive Inventory Dashboard"
+}

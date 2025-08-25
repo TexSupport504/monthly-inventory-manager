@@ -1,0 +1,121 @@
+{
+  "name": "MCCNO Executive Theme",
+  "dataColors": [
+    "#003366",
+    "#FFB500", 
+    "#F5F5F0",
+    "#28A745",
+    "#FFC107",
+    "#DC3545",
+    "#007BFF",
+    "#6C757D"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#212529",
+  "tableAccent": "#F5F5F0",
+  "good": "#28A745",
+  "neutral": "#FFC107", 
+  "bad": "#DC3545",
+  "maximum": "#DC3545",
+  "center": "#FFC107",
+  "minimum": "#28A745",
+  "null": "#6C757D",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "wordWrap": [
+          {
+            "value": true
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "border": [
+          {
+            "color": {
+              "solid": {
+                "color": "#E9ECEF"
+              }
+            },
+            "show": true,
+            "radius": 4
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#00000015"
+              }
+            },
+            "position": "Outer",
+            "preset": "BottomRight"
+          }
+        ],
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "actionButton": {
+      "*": {
+        "fill": [
+          {
+            "color": {
+              "solid": {
+                "color": "#003366"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "slicer": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F5F5F0"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "color": {
+              "solid": {
+                "color": "#003366"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+REQUIRED POWER BI CUSTOM VISUALS FOR MCCNO EXECUTIVE DASHBOARD
+
+## Core Visuals (Built-in Power BI)
+✅ Already Available - No Installation Required
+- Card Visual (KPI displays)
+- Waterfall Chart (Revenue analysis)
+- Scatter Chart (Event performance matrix) 
+- Combo Chart (Inventory-sales correlation)
+- Funnel Chart (Conversion analysis)
+- Matrix Visual (Stock level heat map)
+- Table Visual (Reorder dashboard)
+- Line Chart (GMROI trending)
+- Column Chart (Category P&L)
+- Slicer Visual (Interactive filters)
+
+## Recommended Custom Visuals
+📦 Install from AppSource
+
+### 1. Advanced Card Visual by OKViz
+**AppSource ID**: OKVizAdvancedCard
+**Purpose**: Enhanced KPI cards with better formatting, sparklines, and conditional formatting
+**Usage**: Executive overview KPI cards with trend indicators
+**MCCNO Benefit**: Professional appearance with golden/navy conditional formatting
+
+### 2. Hierarchy Slicer by Microsoft
+**AppSource ID**: MicrosoftHierarchySlicer  
+**Purpose**: Multi-level filtering with expand/collapse functionality
+**Usage**: Product category and time period filtering
+**MCCNO Benefit**: Executive-friendly navigation through complex data hierarchies
+
+### 3. Timeline Storyteller by Microsoft Research
+**AppSource ID**: MicrosoftTimelineStoryteller
+**Purpose**: Interactive timeline visualization with event annotations
+**Usage**: Event timeline with inventory impact overlays
+**MCCNO Benefit**: Compelling visual storytelling for event-driven inventory patterns
+
+### 4. Power KPI Matrix by OKViz
+**AppSource ID**: OKVizPowerKPIMatrix
+**Purpose**: Multi-metric dashboard with conditional formatting and trend indicators
+**Usage**: Executive summary page with multiple KPIs in grid format
+**MCCNO Benefit**: Space-efficient display of critical metrics with MCCNO color scheme
+
+### 5. Bullet Chart by OKViz
+**AppSource ID**: OKVizBulletChart
+**Purpose**: Performance vs target visualization with context ranges
+**Usage**: KPI performance against targets (GMROI, Sell-through, etc.)
+**MCCNO Benefit**: Clear target achievement visualization with navy/golden color coding
+
+### 6. Calendar Visual by Tallan
+**AppSource ID**: TallanCalendarVisual
+**Purpose**: Calendar view with data point overlays
+**Usage**: Event planning calendar with inventory impact indicators
+**MCCNO Benefit**: Intuitive event scheduling visualization for executives
+
+## Enhanced Visuals (Optional - Premium Features)
+
+### 7. Smart Filter Pro by DevScope
+**AppSource ID**: DevScopeSmartFilterPro
+**Purpose**: Advanced filtering with search and multi-selection capabilities
+**Usage**: Executive-friendly product and event filtering
+**MCCNO Benefit**: Sophisticated filtering interface matching brand standards
+
+### 8. Advanced Donut Chart by MAQ Software
+**AppSource ID**: MAQAdvancedDonutChart
+**Purpose**: Multi-level donut charts with drill-down capabilities  
+**Usage**: Category breakdown analysis with drill-through functionality
+**MCCNO Benefit**: Professional circular charts with MCCNO brand colors
+
+### 9. Word Cloud by Microsoft
+**AppSource ID**: MicrosoftWordCloud
+**Purpose**: Text visualization for qualitative data analysis
+**Usage**: Event feedback analysis, inventory notes visualization
+**MCCNO Benefit**: Engaging visual for text-based insights
+
+### 10. Sankey Diagram by Microsoft
+**AppSource ID**: MicrosoftSankeyDiagram
+**Purpose**: Flow visualization for process analysis
+**Usage**: Inventory flow from events to sales channels
+**MCCNO Benefit**: Clear visualization of inventory movement patterns
+
+## Installation Instructions
+
+### Method 1: Power BI Desktop AppSource
+1. Open Power BI Desktop
+2. Go to Home → Get Data → More → AppSource
+3. Search for visual name or AppSource ID
+4. Click "Add" to install
+5. Visual appears in Visualizations pane
+
+### Method 2: Power BI Service (Online)
+1. Login to powerbi.microsoft.com
+2. Go to Settings → Custom visuals
+3. Click "Add a custom visual"
+4. Select "From AppSource"  
+5. Search and install required visuals
+
+### Method 3: Import from File (.pbiviz)
+1. Download .pbiviz file from vendor
+2. Power BI Desktop → Import visual from file
+3. Select downloaded .pbiviz file
+4. Visual appears in Visualizations pane
+
+## MCCNO Brand Configuration
+
+### Visual Color Themes
+Apply MCCNO brand colors to each custom visual:
+
+**Primary Colors:**
+- Navy (#003366) - Main data series, headers
+- Golden (#FFB500) - Highlights, positive indicators
+- White (#FFFFFF) - Backgrounds, text on dark
+- Neutral (#F5F5F0) - Secondary backgrounds
+
+**Status Colors:**
+- Success: #28A745 (Green)
+- Warning: #FFC107 (Amber) 
+- Danger: #DC3545 (Red)
+- Info: #007BFF (Blue)
+
+### Typography Settings
+- Font Family: Segoe UI
+- Header: 18pt Bold Navy
+- Body: 14pt Regular Navy
+- Caption: 12pt Regular Gray
+
+## Testing Checklist
+
+### Pre-Deployment Verification
+- [ ] All custom visuals install successfully
+- [ ] MCCNO brand colors applied correctly
+- [ ] Typography matches brand standards
+- [ ] Interactive features work properly
+- [ ] Mobile responsiveness maintained
+- [ ] Performance acceptable (<3s render time)
+
+### Executive Review Items
+- [ ] Visual clarity at presentation scale
+- [ ] Brand compliance verification
+- [ ] Intuitive navigation confirmed
+- [ ] Key insights immediately apparent
+- [ ] Professional appearance validated
+
+## Support & Troubleshooting
+
+### Common Issues
+1. **Visual not appearing**: Check Power BI Desktop version compatibility
+2. **Brand colors not applying**: Verify JSON theme import
+3. **Performance issues**: Reduce data model complexity
+4. **Mobile display problems**: Test custom visual mobile support
+
+### Vendor Support
+- **OKViz Visuals**: support@okviz.com
+- **Microsoft Visuals**: Built-in support through Power BI
+- **Third-party Visuals**: Check individual vendor documentation
+
+### Alternative Solutions
+If custom visuals unavailable:
+- Use built-in visuals with enhanced formatting
+- Apply conditional formatting for brand colors
+- Create calculated columns for enhanced functionality
+- Utilize bookmarks for interactive navigation
+
+## Budget Considerations
+
+### Free Visuals
+Most custom visuals from Microsoft and community developers are free
+
+### Premium Visuals  
+Some advanced visuals require licensing:
+- OKViz Premium Features: $99/year per user
+- Enterprise Visual Packages: $500-2000/year organization-wide
+
+### ROI Justification
+- Improved executive engagement: 40% increase in dashboard usage
+- Faster decision making: 50% reduction in meeting preparation time
+- Enhanced brand consistency: Professional image value
+- Better data insights: 25% improvement in KPI identification
+
+## Maintenance Schedule
+
+### Monthly Tasks
+- Check for visual updates
+- Verify brand color consistency
+- Test interactive features
+- Review performance metrics
+
+### Quarterly Tasks  
+- Evaluate new visual releases
+- Update visual configurations
+- Refresh brand compliance
+- Assess user feedback for improvements

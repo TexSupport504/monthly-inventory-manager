@@ -1,0 +1,75 @@
+﻿-- CLIENT DASHBOARD - DAX Measures (TEMPLATE VERSION)
+-- Generated from project specifications  
+-- Date: 2025-08-21 07:53:41
+-- Compatible with: Generic table and column names for any client
+
+-- ===============================
+-- PRIMARY KPI MEASURES
+-- ===============================
+
+GMROI = 
+DIVIDE(
+    SUM(Sales[GrossMargin]), 
+    SUMX(Inventory, Inventory[Quantity] * Inventory[UnitCost]) / COUNTROWS(Inventory), 
+    0
+)
+
+Total_Revenue = SUM(Sales[Revenue])
+
+Sell_Through_Rate = 
+DIVIDE(
+    SUM(Sales[UnitsSold]), 
+    SUM(Inventory[Quantity]), 
+    0
+)
+
+Days_of_Supply = 
+DIVIDE(
+    AVERAGE(Inventory[Quantity]), 
+    CALCULATE(
+        AVERAGE(Sales[UnitsSold]), 
+        DATESINPERIOD(Calendar[Date], TODAY(), -30, DAY)
+    ), 
+    0
+)
+
+-- ===============================
+-- EVENT IMPACT MEASURES
+-- ===============================
+
+Event_Revenue = 
+CALCULATE(
+    SUM(Sales[Revenue]), 
+    NOT(ISBLANK(Sales[EventID]))
+)
+
+Event_Conversion_Rate = 
+DIVIDE(
+    CALCULATE(SUM(Sales[UnitsSold]), NOT(ISBLANK(Sales[EventID]))), 
+    SUM(Events[EstimatedAttendance]), 
+    0
+)
+
+-- ===============================
+-- FINANCIAL MEASURES
+-- ===============================
+
+Gross_Margin_Percent = 
+DIVIDE(
+    SUM(Sales[GrossMargin]), 
+    SUM(Sales[Revenue]), 
+    0
+)
+
+Inventory_Value = 
+SUMX(Inventory, Inventory[Quantity] * Inventory[UnitCost])
+
+-- ===============================
+-- CLIENT CUSTOMIZATION NOTES
+-- ===============================
+
+-- TO CUSTOMIZE FOR NEW CLIENT:
+-- 1. Replace table names with client's actual table names
+-- 2. Replace column names with client's actual column names  
+-- 3. Add client-specific KPIs and business rules
+-- 4. Adjust time intelligence based on client's fiscal calendar

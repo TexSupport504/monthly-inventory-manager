@@ -1,0 +1,21 @@
+asof_date,checkpoint,location,sku,desc,category,qty,uom,cost,price,lead_time_days,reorder_point,safety_stock
+2025-08-20,BOM,in_store,SKU001,Branded Pen - Black,Promotional,150,EA,0.50,2.00,14,75,25
+2025-08-20,BOM,back_of_store,SKU001,Branded Pen - Black,Promotional,500,EA,0.50,2.00,14,75,25
+2025-08-20,BOM,in_store,SKU002,Small Shipping Box 10x8x6,Packaging,75,EA,1.25,3.50,7,40,15
+2025-08-20,BOM,back_of_store,SKU002,Small Shipping Box 10x8x6,Packaging,200,EA,1.25,3.50,7,40,15
+2025-08-20,BOM,in_store,SKU003,T-Shirt Large Logo,Apparel,25,EA,8.00,25.00,21,15,8
+2025-08-20,BOM,back_of_store,SKU003,T-Shirt Large Logo,Apparel,100,EA,8.00,25.00,21,15,8
+2025-08-20,BOM,in_store,SKU004,Bubble Wrap Roll 12inch,Packaging,10,ROLL,15.00,35.00,10,8,3
+2025-08-20,BOM,back_of_store,SKU004,Bubble Wrap Roll 12inch,Packaging,50,ROLL,15.00,35.00,10,8,3
+2025-08-20,BOM,in_store,SKU005,Coffee Mug Ceramic,Promotional,40,EA,3.25,12.00,14,25,10
+2025-08-20,BOM,back_of_store,SKU005,Coffee Mug Ceramic,Promotional,120,EA,3.25,12.00,14,25,10
+2025-08-20,BOM,in_store,SKU006,Shipping Labels 4x6 Roll,Labels,30,ROLL,12.50,28.00,14,12,5
+2025-08-20,BOM,back_of_store,SKU006,Shipping Labels 4x6 Roll,Labels,85,ROLL,12.50,28.00,14,12,5
+2025-08-20,BOM,in_store,SKU007,Polo Shirt Medium,Apparel,18,EA,18.00,45.00,21,10,5
+2025-08-20,BOM,back_of_store,SKU007,Polo Shirt Medium,Apparel,45,EA,18.00,45.00,21,10,5
+2025-08-20,BOM,in_store,SKU008,Packaging Tape 2inch,Packaging,25,ROLL,2.25,6.50,7,15,8
+2025-08-20,BOM,back_of_store,SKU008,Packaging Tape 2inch,Packaging,80,ROLL,2.25,6.50,7,15,8
+2025-08-20,BOM,in_store,SKU009,Notebook Leather,Promotional,20,EA,7.50,18.00,14,12,6
+2025-08-20,BOM,back_of_store,SKU009,Notebook Leather,Promotional,55,EA,7.50,18.00,14,12,6
+2025-08-20,BOM,in_store,SKU010,Priority Overnight Envelopes,Shipping,100,EA,0.85,2.50,5,50,25
+2025-08-20,BOM,back_of_store,SKU010,Priority Overnight Envelopes,Shipping,300,EA,0.85,2.50,5,50,25

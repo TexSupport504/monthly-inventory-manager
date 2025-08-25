@@ -1,0 +1,96 @@
+﻿-- MCCNO Executive Dashboard - DAX Measures (SAMPLE DATA VERSION)
+-- Generated from project specifications
+-- Date: 2025-08-21 07:53:41
+-- Compatible with: events_sample.csv, inventory_sample.csv, sales_sample.csv
+
+-- ===============================
+-- PRIMARY KPI MEASURES
+-- ===============================
+
+GMROI = 
+DIVIDE(
+    SUM(sales_sample[gross_margin]), 
+    AVERAGEX(inventory_sample, inventory_sample[qty] * inventory_sample[cost]), 
+    0
+)
+
+Total_Revenue = SUM(sales_sample[revenue])
+
+Sell_Through_Rate = 
+DIVIDE(
+    SUM(sales_sample[units_sold]), 
+    SUM(inventory_sample[qty]), 
+    0
+)
+
+Days_of_Supply = 
+DIVIDE(
+    AVERAGE(inventory_sample[qty]), 
+    CALCULATE(
+        AVERAGE(sales_sample[units_sold]), 
+        DATESINPERIOD(sales_sample[date], TODAY(), -30, DAY)
+    ), 
+    0
+)
+
+-- ===============================
+-- EVENT IMPACT MEASURES
+-- ===============================
+
+Event_Revenue = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    NOT(ISBLANK(sales_sample[event_id]))
+)
+
+Event_Conversion_Rate = 
+DIVIDE(
+    CALCULATE(SUM(sales_sample[units_sold]), NOT(ISBLANK(sales_sample[event_id]))), 
+    SUM(events_sample[est_attendance]), 
+    0
+)
+
+-- ===============================
+-- FINANCIAL MEASURES
+-- ===============================
+
+Gross_Margin_Percent = 
+DIVIDE(
+    SUM(sales_sample[gross_margin]), 
+    SUM(sales_sample[revenue]), 
+    0
+)
+
+Inventory_Value = 
+SUMX(inventory_sample, inventory_sample[qty] * inventory_sample[cost])
+
+-- ===============================
+-- RISK & ALERT MEASURES
+-- ===============================
+
+Stockout_Risk_SKUs = 
+CALCULATE(
+    DISTINCTCOUNT(inventory_sample[sku]), 
+    inventory_sample[qty] < inventory_sample[reorder_point]
+)
+
+Critical_Stock_Level = 
+SUMX(
+    VALUES(inventory_sample[sku]),
+    IF(
+        DIVIDE(
+            CALCULATE(
+                AVERAGE(inventory_sample[qty]), 
+                inventory_sample[sku] = EARLIER(inventory_sample[sku])
+            ), 
+            CALCULATE(
+                AVERAGE(sales_sample[units_sold]), 
+                DATESINPERIOD(sales_sample[date], TODAY(), -30, DAY),
+                sales_sample[sku] = EARLIER(inventory_sample[sku])
+            ), 
+            0
+        ) < 7,
+        1,
+        0
+    )
+)

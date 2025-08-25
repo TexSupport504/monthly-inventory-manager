@@ -1,0 +1,44 @@
+# Power BI Files
+*.pbix
+*.pbit
+*.pbids
+*.pbis
+*.rdl
+
+# Power BI Cache
+*.bak
+
+# Office Files
+~$*.xlsx
+~$*.docx
+~$*.pptx
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large data files (uncomment if you have large datasets)
+# *.csv
+# *.json
+
+# Personal credentials
+*config.json
+*credentials.json
+
+# Power BI Service
+.pbiWorkspace
+
+# Node modules (if using any JavaScript tools)
+node_modules/
