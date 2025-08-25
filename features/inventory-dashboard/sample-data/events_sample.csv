@@ -1,0 +1,11 @@
+event_id,name,venue_area,event_type,start_dt,end_dt,est_attendance,actual_revenue,conversion_rate,attach_rate
+EVT001,Q4 Tech Conference 2025,Main Hall,Conference,2025-09-15 09:00:00,2025-09-15 18:00:00,500,89000,0.18,1.4
+EVT002,Product Launch Showcase,Booth A,Launch,2025-09-20 10:00:00,2025-09-20 16:00:00,250,45000,0.32,1.8
+EVT003,Logistics Training Workshop,Room B,Training,2025-09-25 08:00:00,2025-09-25 17:00:00,100,12500,0.15,1.2
+EVT004,Holiday Customer Appreciation,Main Lobby,Customer Event,2025-12-15 14:00:00,2025-12-15 20:00:00,800,156000,0.24,2.1
+EVT005,Supplier Summit,Conference Room C,Meeting,2025-10-05 09:00:00,2025-10-05 17:00:00,75,8500,0.18,1.1
+EVT006,Spring Trade Show,Exhibition Hall,Conference,2025-11-10 09:00:00,2025-11-12 17:00:00,1200,245000,0.22,1.6
+EVT007,New Product Demo Day,Demo Area,Launch,2025-10-18 13:00:00,2025-10-18 19:00:00,180,28000,0.28,1.5
+EVT008,Staff Training Session,Training Room A,Training,2025-10-22 08:00:00,2025-10-22 16:00:00,45,3200,0.12,1.0
+EVT009,VIP Customer Event,Private Dining,Customer Event,2025-11-20 18:00:00,2025-11-20 22:00:00,120,35000,0.45,2.8
+EVT010,Industry Networking,Cocktail Lounge,Meeting,2025-11-30 17:00:00,2025-11-30 21:00:00,300,18500,0.16,1.3

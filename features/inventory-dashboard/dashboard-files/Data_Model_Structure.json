@@ -1,0 +1,342 @@
+{
+  "data_model_structure": {
+    "version": "1.0",
+    "description": "MCCNO Executive Dashboard Data Model for ConventiCore Inventory Management",
+    "tables": [
+      {
+        "name": "Events",
+        "type": "dimension",
+        "description": "Event master data including conferences, launches, training sessions",
+        "key_fields": ["event_id"],
+        "columns": [
+          {"name": "event_id", "type": "text", "description": "Unique event identifier"},
+          {"name": "name", "type": "text", "description": "Event display name"},
+          {"name": "venue_area", "type": "text", "description": "Physical location/room"},
+          {"name": "event_type", "type": "text", "description": "Conference, Launch, Training, Customer Event"},
+          {"name": "start_dt", "type": "datetime", "description": "Event start timestamp"},
+          {"name": "end_dt", "type": "datetime", "description": "Event end timestamp"},
+          {"name": "est_attendance", "type": "integer", "description": "Estimated attendee count"},
+          {"name": "actual_revenue", "type": "currency", "description": "Revenue generated at event"},
+          {"name": "conversion_rate", "type": "decimal", "description": "Attendee to customer conversion"},
+          {"name": "attach_rate", "type": "decimal", "description": "Items per transaction"}
+        ]
+      },
+      {
+        "name": "Inventory",
+        "type": "fact",
+        "description": "Current inventory levels by SKU and location with cost information",
+        "key_fields": ["sku", "location", "asof_date"],
+        "columns": [
+          {"name": "asof_date", "type": "date", "description": "Inventory count date"},
+          {"name": "checkpoint", "type": "text", "description": "BOM, MID, EOM timing"},
+          {"name": "location", "type": "text", "description": "in_store, back_of_store"},
+          {"name": "sku", "type": "text", "description": "Product SKU identifier"},
+          {"name": "desc", "type": "text", "description": "Product description"},
+          {"name": "category", "type": "text", "description": "Promotional, Apparel, Packaging, Labels, Shipping"},
+          {"name": "qty", "type": "integer", "description": "Current quantity on hand"},
+          {"name": "uom", "type": "text", "description": "Unit of measure"},
+          {"name": "cost", "type": "currency", "description": "Unit cost"},
+          {"name": "price", "type": "currency", "description": "Unit selling price"},
+          {"name": "lead_time_days", "type": "integer", "description": "Supplier lead time"},
+          {"name": "reorder_point", "type": "integer", "description": "Minimum stock trigger"},
+          {"name": "safety_stock", "type": "integer", "description": "Buffer inventory level"}
+        ]
+      },
+      {
+        "name": "Sales",
+        "type": "fact",
+        "description": "Transaction history with event correlation and profitability data",
+        "key_fields": ["date", "sku"],
+        "columns": [
+          {"name": "date", "type": "date", "description": "Transaction date"},
+          {"name": "sku", "type": "text", "description": "Product SKU sold"},
+          {"name": "desc", "type": "text", "description": "Product description"},
+          {"name": "category", "type": "text", "description": "Product category"},
+          {"name": "units_sold", "type": "integer", "description": "Quantity sold"},
+          {"name": "revenue", "type": "currency", "description": "Gross sales revenue"},
+          {"name": "cogs", "type": "currency", "description": "Cost of goods sold"},
+          {"name": "gross_margin", "type": "currency", "description": "Revenue minus COGS"},
+          {"name": "event_id", "type": "text", "description": "Associated event (if applicable)"},
+          {"name": "channel", "type": "text", "description": "Walk-in, Online, Bulk, Event"},
+          {"name": "location", "type": "text", "description": "Sale location"}
+        ]
+      },
+      {
+        "name": "KPI_Targets",
+        "type": "parameter",
+        "description": "Performance targets and thresholds for dashboard calculations",
+        "key_fields": ["metric"],
+        "columns": [
+          {"name": "metric", "type": "text", "description": "KPI identifier"},
+          {"name": "target_value", "type": "decimal", "description": "Target performance level"},
+          {"name": "threshold_good", "type": "decimal", "description": "Excellence threshold"},
+          {"name": "threshold_warning", "type": "decimal", "description": "Warning threshold"},
+          {"name": "threshold_critical", "type": "decimal", "description": "Critical threshold"}
+        ]
+      },
+      {
+        "name": "Date",
+        "type": "dimension",
+        "description": "Standard date dimension for time intelligence calculations",
+        "key_fields": ["date"],
+        "columns": [
+          {"name": "date", "type": "date", "description": "Calendar date"},
+          {"name": "year", "type": "integer", "description": "Calendar year"},
+          {"name": "quarter", "type": "integer", "description": "Calendar quarter"},
+          {"name": "month", "type": "integer", "description": "Calendar month"},
+          {"name": "month_name", "type": "text", "description": "Month display name"},
+          {"name": "day_of_week", "type": "integer", "description": "Day of week number"},
+          {"name": "day_name", "type": "text", "description": "Day display name"},
+          {"name": "is_weekend", "type": "boolean", "description": "Weekend flag"},
+          {"name": "is_holiday", "type": "boolean", "description": "Holiday flag"}
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "from_table": "Sales",
+        "from_column": "event_id",
+        "to_table": "Events", 
+        "to_column": "event_id",
+        "cardinality": "many_to_one",
+        "cross_filter": "single",
+        "description": "Links sales transactions to events"
+      },
+      {
+        "from_table": "Sales",
+        "from_column": "sku",
+        "to_table": "Inventory",
+        "to_column": "sku", 
+        "cardinality": "many_to_many",
+        "cross_filter": "both",
+        "description": "Links sales to inventory by product"
+      },
+      {
+        "from_table": "Sales",
+        "from_column": "date",
+        "to_table": "Date",
+        "to_column": "date",
+        "cardinality": "many_to_one", 
+        "cross_filter": "single",
+        "description": "Links sales to date dimension"
+      },
+      {
+        "from_table": "Inventory",
+        "from_column": "asof_date",
+        "to_table": "Date",
+        "to_column": "date",
+        "cardinality": "many_to_one",
+        "cross_filter": "single", 
+        "description": "Links inventory counts to date dimension"
+      },
+      {
+        "from_table": "Events",
+        "from_column": "start_dt",
+        "to_table": "Date", 
+        "to_column": "date",
+        "cardinality": "many_to_one",
+        "cross_filter": "single",
+        "description": "Links events to date dimension"
+      }
+    ]
+  },
+  "dax_measures": {
+    "kpi_measures": [
+      {
+        "name": "GMROI",
+        "description": "Gross Margin Return on Investment",
+        "dax": "DIVIDE(SUM(Sales[gross_margin]), AVERAGE(Inventory[qty] * Inventory[cost]), 0)",
+        "format": "0.0x",
+        "usage": "Primary KPI card, trending analysis"
+      },
+      {
+        "name": "Total Revenue",
+        "description": "Sum of all sales revenue",
+        "dax": "SUM(Sales[revenue])",
+        "format": "$#,##0",
+        "usage": "Primary KPI card, waterfall charts"
+      },
+      {
+        "name": "Sell Through Rate", 
+        "description": "Percentage of available inventory sold",
+        "dax": "DIVIDE(SUM(Sales[units_sold]), SUM(Inventory[qty]), 0)",
+        "format": "0.0%",
+        "usage": "Primary KPI card, performance analysis"
+      },
+      {
+        "name": "Days of Supply",
+        "description": "Days of inventory remaining at current usage",
+        "dax": "DIVIDE(SUM(Inventory[qty]), CALCULATE(AVERAGE(Sales[units_sold]), DATESINPERIOD(Date[date], TODAY(), -30, DAY)), 0)",
+        "format": "0 \"days\"",
+        "usage": "Primary KPI card, inventory planning"
+      },
+      {
+        "name": "Gross Margin %",
+        "description": "Gross margin as percentage of revenue",
+        "dax": "DIVIDE(SUM(Sales[gross_margin]), SUM(Sales[revenue]), 0)",
+        "format": "0.0%",
+        "usage": "Profitability analysis by category"
+      },
+      {
+        "name": "Inventory Value",
+        "description": "Total value of current inventory",
+        "dax": "SUMX(Inventory, Inventory[qty] * Inventory[cost])",
+        "format": "$#,##0",
+        "usage": "Working capital analysis"
+      }
+    ],
+    "event_measures": [
+      {
+        "name": "Event Revenue",
+        "description": "Revenue attributed to specific events",
+        "dax": "CALCULATE(SUM(Sales[revenue]), NOT(ISBLANK(Sales[event_id])))",
+        "format": "$#,##0",
+        "usage": "Event impact analysis, performance matrix"
+      },
+      {
+        "name": "Event Conversion Rate",
+        "description": "Calculated conversion rate for events",
+        "dax": "DIVIDE([Event Revenue] / AVERAGE(Sales[price]), RELATED(Events[est_attendance]), 0)",
+        "format": "0.0%",
+        "usage": "Event effectiveness measurement"
+      },
+      {
+        "name": "Pre Event Inventory",
+        "description": "Inventory levels 7 days before event",
+        "dax": "CALCULATE(SUM(Inventory[qty]), DATEADD(Events[start_dt], -7, DAY))",
+        "format": "#,##0",
+        "usage": "Before/after event analysis"
+      },
+      {
+        "name": "Post Event Inventory",
+        "description": "Inventory levels 3 days after event",
+        "dax": "CALCULATE(SUM(Inventory[qty]), DATEADD(Events[end_dt], 3, DAY))",
+        "format": "#,##0", 
+        "usage": "Before/after event analysis"
+      }
+    ],
+    "alert_measures": [
+      {
+        "name": "Stockout Risk SKUs",
+        "description": "Count of SKUs below reorder point",
+        "dax": "CALCULATE(DISTINCTCOUNT(Inventory[sku]), Inventory[qty] < Inventory[reorder_point])",
+        "format": "#,##0",
+        "usage": "Risk alert panel, exception reporting"
+      },
+      {
+        "name": "Critical Stock Level",
+        "description": "SKUs with less than 7 days supply",
+        "dax": "CALCULATE(DISTINCTCOUNT(Inventory[sku]), [Days of Supply] < 7)",
+        "format": "#,##0",
+        "usage": "Critical alerts, executive dashboard"
+      },
+      {
+        "name": "Shrink Variance %",
+        "description": "Inventory variance as percentage",
+        "dax": "DIVIDE(ABS([Expected Inventory] - [Actual Inventory]), [Expected Inventory], 0)",
+        "format": "0.0%", 
+        "usage": "Shrink detection, variance analysis"
+      },
+      {
+        "name": "Overstock Value",
+        "description": "Value of inventory above optimal levels",
+        "dax": "SUMX(FILTER(Inventory, [Days of Supply] > 60), Inventory[qty] * Inventory[cost])",
+        "format": "$#,##0",
+        "usage": "Working capital optimization"
+      }
+    ],
+    "time_intelligence": [
+      {
+        "name": "Revenue YTD",
+        "description": "Year-to-date revenue",
+        "dax": "TOTALYTD(SUM(Sales[revenue]), Date[date])",
+        "format": "$#,##0",
+        "usage": "YTD performance tracking"
+      },
+      {
+        "name": "Revenue Previous Month",
+        "description": "Prior month revenue for comparison",
+        "dax": "CALCULATE(SUM(Sales[revenue]), DATEADD(Date[date], -1, MONTH))",
+        "format": "$#,##0",
+        "usage": "Month-over-month variance"
+      },
+      {
+        "name": "Revenue Growth %",
+        "description": "Revenue growth vs previous period",
+        "dax": "DIVIDE([Total Revenue] - [Revenue Previous Month], [Revenue Previous Month], 0)",
+        "format": "0.0%",
+        "usage": "Growth trend analysis"
+      },
+      {
+        "name": "Rolling 30 Day Average",
+        "description": "30-day rolling average for trending",
+        "dax": "CALCULATE(AVERAGE(Sales[revenue]), DATESINPERIOD(Date[date], LASTDATE(Date[date]), -30, DAY))",
+        "format": "$#,##0",
+        "usage": "Trend smoothing, forecasting"
+      }
+    ]
+  },
+  "calculated_columns": [
+    {
+      "table": "Sales",
+      "name": "Margin %",
+      "dax": "DIVIDE(Sales[gross_margin], Sales[revenue], 0)",
+      "description": "Margin percentage for each transaction"
+    },
+    {
+      "table": "Inventory", 
+      "name": "Inventory Value",
+      "dax": "Inventory[qty] * Inventory[cost]",
+      "description": "Total value of inventory by SKU/location"
+    },
+    {
+      "table": "Events",
+      "name": "Event Duration Hours",
+      "dax": "DATEDIFF(Events[start_dt], Events[end_dt], HOUR)",
+      "description": "Duration of event in hours"
+    },
+    {
+      "table": "Inventory",
+      "name": "Stock Status",
+      "dax": "IF(Inventory[qty] <= Inventory[reorder_point], \"Reorder\", IF(Inventory[qty] <= Inventory[safety_stock], \"Critical\", \"Normal\"))",
+      "description": "Stock level status classification"
+    }
+  ],
+  "hierarchies": [
+    {
+      "name": "Date Hierarchy",
+      "table": "Date",
+      "levels": ["Year", "Quarter", "Month", "Date"],
+      "description": "Standard time hierarchy for drill-down"
+    },
+    {
+      "name": "Product Hierarchy", 
+      "table": "Inventory",
+      "levels": ["Category", "SKU", "Description"],
+      "description": "Product categorization for analysis"
+    },
+    {
+      "name": "Location Hierarchy",
+      "table": "Inventory", 
+      "levels": ["Location", "SKU"],
+      "description": "Geographic/physical location breakdown"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "GMROI Target",
+      "value": 3.0,
+      "description": "Target GMROI for performance evaluation"
+    },
+    {
+      "name": "Service Level",
+      "value": 0.95,
+      "description": "Target service level for safety stock calculations"
+    },
+    {
+      "name": "Days Supply Target",
+      "value": 30,
+      "description": "Target days of supply for inventory planning"
+    }
+  ]
+}

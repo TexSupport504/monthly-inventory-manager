@@ -1,0 +1,79 @@
+{
+  "name": "MCCNO Executive Dashboard - Custom Visual Package",
+  "version": "1.0.0",
+  "description": "Pre-configured custom visuals for MCCNO Executive Dashboard with brand colors and layouts",
+  "created": "2025-08-22",
+  "visuals": {
+    "advanced_kpi_cards": {
+      "visual_type": "AdvancedCard",
+      "vendor": "OKViz",
+      "appstore_id": "OKVizAdvancedCard",
+      "free": true,
+      "configuration": {
+        "colors": {
+          "primary": "#003366",
+          "accent": "#FFB500",
+          "success": "#28A745",
+          "warning": "#FFC107",
+          "danger": "#DC3545",
+          "background": "#FFFFFF",
+          "text": "#212529"
+        },
+        "typography": {
+          "font_family": "Segoe UI",
+          "title_size": "18px",
+          "value_size": "32px",
+          "subtitle_size": "12px"
+        },
+        "layout": {
+          "card_width": "280px",
+          "card_height": "140px",
+          "border_radius": "4px",
+          "border_width": "1px",
+          "border_color": "#F5F5F0"
+        }
+      }
+    },
+    "bullet_charts": {
+      "visual_type": "BulletChart",
+      "vendor": "OKViz",
+      "appstore_id": "OKVizBulletChart",
+      "free": true,
+      "configuration": {
+        "target_colors": {
+          "poor": "#DC3545",
+          "satisfactory": "#FFC107",
+          "good": "#FFB500",
+          "excellent": "#28A745"
+        },
+        "bar_colors": {
+          "actual": "#003366",
+          "target": "#FFB500"
+        }
+      }
+    },
+    "power_kpi_matrix": {
+      "visual_type": "PowerKPIMatrix",
+      "vendor": "OKViz",
+      "appstore_id": "OKVizPowerKPIMatrix",
+      "free": true,
+      "configuration": {
+        "grid_colors": {
+          "header": "#003366",
+          "header_text": "#FFFFFF",
+          "row_alternate": "#F5F5F0",
+          "border": "#E0E0E0"
+        }
+      }
+    }
+  },
+  "installation_script": {
+    "powershell": "Install-MCCNO-Visuals.ps1",
+    "instructions": [
+      "1. Open Power BI Desktop",
+      "2. Run the PowerShell installation script",
+      "3. Import the MCCNO_Dashboard_Template.pbit file",
+      "4. Connect to your data sources"
+    ]
+  }
+}

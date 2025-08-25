@@ -1,0 +1,44 @@
+MCCNO Dashboard - Quick Copy Reference
+=====================================
+
+PAGE 1: EXECUTIVE OVERVIEW
+--------------------------
+KPI Cards (Y: 120, Height: 100):
+• GMROI Card:          X: 0,   Width: 240
+• Total Revenue Card:  X: 240, Width: 240  
+• Sell Through Card:   X: 480, Width: 240
+• Days Supply Card:    X: 720, Width: 240
+
+Main Charts (Y: 220):
+• Revenue Waterfall:   X: 0,   Width: 576, Height: 400
+• Risk Alert Panel:    X: 576, Width: 384, Height: 400
+
+PAGE 2: EVENT IMPACT ANALYSIS  
+-----------------------------
+• Performance Matrix:     X: 0,   Y: 120, W: 480, H: 300
+• Inventory-Sales Chart:  X: 480, Y: 120, W: 432, H: 300
+• Conversion Funnel:      X: 0,   Y: 420, W: 432, H: 300  
+• Before/After Analysis:  X: 432, Y: 420, W: 480, H: 300
+
+PAGE 3: INVENTORY INTELLIGENCE
+------------------------------
+• Heat Map (full width):  X: 0,   Y: 120, W: 960, H: 200
+• Reorder Dashboard:      X: 0,   Y: 320, W: 576, H: 300
+• Safety Stock Gauge:     X: 576, Y: 320, W: 336, H: 150
+• Shrink Monitor:         X: 576, Y: 470, W: 336, H: 150
+
+PAGE 4: FINANCIAL PERFORMANCE
+-----------------------------  
+• P&L Analysis (full):    X: 0,   Y: 120, W: 960, H: 200
+• GMROI Trending:         X: 0,   Y: 320, W: 576, H: 300
+• Working Capital Chart:  X: 576, Y: 320, W: 336, H: 150
+• Investment Planning:    X: 576, Y: 470, W: 336, H: 150
+
+FILTERS (Top of each page)
+--------------------------
+• Time Period:    Date[MonthName]
+• Event Type:     Events[event_type]  
+• Category:       Inventory[category]
+• Location:       Inventory[location]
+
+STANDARD CANVAS: 960x800 pixels

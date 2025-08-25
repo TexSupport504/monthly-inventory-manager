@@ -1,0 +1,104 @@
+{
+  "name": "MCCNO Executive Theme",
+  "version": "1.0",
+  "description": "Official MCCNO brand colors for executive Power BI dashboards",
+  "colors": {
+    "primary": {
+      "name": "Primary Navy (PMS 295)",
+      "hex": "#003366",
+      "rgb": "0, 51, 102",
+      "usage": "Headers, KPI backgrounds, primary data series"
+    },
+    "accent": {
+      "name": "Golden Accent (PMS 139)",
+      "hex": "#FFB500",
+      "rgb": "255, 181, 0",
+      "usage": "Performance highlights, positive indicators, CTAs"
+    },
+    "neutral": {
+      "name": "Neutral Support (PMS 4685)",
+      "hex": "#F5F5F0",
+      "rgb": "245, 245, 240",
+      "usage": "Secondary backgrounds, card sections"
+    },
+    "foundation": {
+      "name": "Clean Foundation White",
+      "hex": "#FFFFFF",
+      "rgb": "255, 255, 255",
+      "usage": "Main backgrounds, logo placement"
+    },
+    "success": {
+      "name": "Success Green",
+      "hex": "#28A745",
+      "rgb": "40, 167, 69",
+      "usage": "Positive performance indicators"
+    },
+    "warning": {
+      "name": "Warning Amber",
+      "hex": "#FFC107",
+      "rgb": "255, 193, 7",
+      "usage": "Caution indicators, medium alerts"
+    },
+    "danger": {
+      "name": "Alert Red",
+      "hex": "#DC3545",
+      "rgb": "220, 53, 69",
+      "usage": "Critical alerts, negative performance"
+    },
+    "info": {
+      "name": "Information Blue",
+      "hex": "#007BFF",
+      "rgb": "0, 123, 255",
+      "usage": "Informational elements, links"
+    },
+    "text": {
+      "primary": "#003366",
+      "secondary": "#666666",
+      "light": "#999999",
+      "inverse": "#FFFFFF"
+    }
+  },
+  "powerbi_theme": {
+    "name": "MCCNO Executive",
+    "dataColors": [
+      "#003366",
+      "#FFB500", 
+      "#28A745",
+      "#007BFF",
+      "#FFC107",
+      "#DC3545",
+      "#666666",
+      "#F5F5F0"
+    ],
+    "good": "#28A745",
+    "neutral": "#FFC107",
+    "bad": "#DC3545",
+    "maximum": "#003366",
+    "center": "#666666",
+    "minimum": "#F5F5F0",
+    "null": "#E5E5E5",
+    "background": "#FFFFFF",
+    "foreground": "#003366",
+    "tableAccent": "#F5F5F0",
+    "brandColor1": "#003366",
+    "brandColor2": "#FFB500"
+  },
+  "accessibility": {
+    "contrast_ratios": {
+      "navy_on_white": "12.6:1",
+      "golden_on_navy": "4.2:1",
+      "white_on_navy": "12.6:1"
+    },
+    "color_blind_friendly": true,
+    "wcag_compliance": "AA"
+  },
+  "usage_guidelines": {
+    "logo_backgrounds": {
+      "full_color": ["#FFFFFF"],
+      "reversed": ["#003366"],
+      "never": ["#FFB500", "#F5F5F0"]
+    },
+    "clear_space": "0.5 inch minimum",
+    "minimum_logo_size": "120px width desktop, 100px tablet"
+  }
+}

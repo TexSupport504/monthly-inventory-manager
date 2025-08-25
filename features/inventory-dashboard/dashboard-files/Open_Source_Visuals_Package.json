@@ -1,0 +1,183 @@
+{
+  "name": "MCCNO Dashboard - Open Source Visuals Package",
+  "version": "1.0.0",
+  "description": "Curated collection of open source Power BI visuals for executive dashboards",
+  "created": "2025-08-22",
+  "license": "Open Source",
+  "visuals": [
+    {
+      "name": "Advanced Card Visual",
+      "id": "AdvancedCard1447991808294",
+      "source": "Microsoft AppSource",
+      "license": "Free",
+      "description": "Enhanced card with conditional formatting, icons, and advanced styling",
+      "use_case": "KPI Cards (GMROI, Revenue, Sell Through, Days Supply)",
+      "features": [
+        "Conditional formatting",
+        "Custom icons",
+        "Background colors",
+        "Multiple data labels"
+      ],
+      "download_url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381304"
+    },
+    {
+      "name": "Infographic Designer",
+      "id": "InfographicDesigner1411041711524",
+      "source": "Microsoft AppSource", 
+      "license": "Free",
+      "description": "Create infographic-style cards with icons and custom layouts",
+      "use_case": "Executive KPI Dashboard with icons",
+      "features": [
+        "Custom icons library",
+        "Professional layouts",
+        "Color coding",
+        "Text formatting"
+      ],
+      "download_url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104380914"
+    },
+    {
+      "name": "HTML Content",
+      "id": "HTMLContent1505227804732",
+      "source": "Microsoft AppSource",
+      "license": "Free", 
+      "description": "Display custom HTML content for branding and logos",
+      "use_case": "MCCNO logo and header branding",
+      "features": [
+        "Custom HTML/CSS",
+        "Logo integration",
+        "Brand headers",
+        "Responsive design"
+      ],
+      "download_url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381907"
+    },
+    {
+      "name": "Multi KPI",
+      "id": "MultiKPI1504967359094",
+      "source": "Microsoft AppSource",
+      "license": "Free",
+      "description": "Display multiple KPIs in a single visual with sparklines",
+      "use_case": "Executive summary panel",
+      "features": [
+        "Multiple KPIs in one visual",
+        "Sparkline trends",
+        "Conditional formatting",
+        "Compact layout"
+      ],
+      "download_url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381763"
+    },
+    {
+      "name": "Enhanced Scatter Chart",
+      "id": "EnhancedScatter1521397534536",
+      "source": "Microsoft AppSource",
+      "license": "Free",
+      "description": "Advanced scatter plot with additional features",
+      "use_case": "Event Performance Analysis (Attendance vs Revenue)",
+      "features": [
+        "Trend lines",
+        "Quadrant analysis",
+        "Custom tooltips",
+        "Animation support"
+      ],
+      "download_url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381308"
+    },
+    {
+      "name": "Word Cloud",
+      "id": "WordCloud1554226417508",
+      "source": "Microsoft AppSource",
+      "license": "Free",
+      "description": "Visualize text data as word clouds",
+      "use_case": "Product category analysis or event types",
+      "features": [
+        "Customizable colors",
+        "Font options",
+        "Interactive selection",
+        "Size by frequency"
+      ],
+      "download_url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381752"
+    },
+    {
+      "name": "Bullet Chart",
+      "id": "BulletChart1553883090952",
+      "source": "Microsoft AppSource",
+      "license": "Free",
+      "description": "Performance against targets visualization",
+      "use_case": "KPI performance vs targets (GMROI vs 3.0 target)",
+      "features": [
+        "Target comparison",
+        "Performance bands",
+        "Compact design",
+        "Multiple metrics"
+      ],
+      "download_url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381755"
+    },
+    {
+      "name": "Calendar Heatmap",
+      "id": "CalendarHeatmap1602164204418",
+      "source": "Microsoft AppSource",
+      "license": "Free",
+      "description": "Calendar view with color-coded values",
+      "use_case": "Sales patterns by date, event calendar",
+      "features": [
+        "Calendar layout",
+        "Color intensity mapping",
+        "Date filtering",
+        "Tooltip details"
+      ],
+      "download_url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381763"
+    }
+  ],
+  "installation_guide": {
+    "steps": [
+      "1. Open Power BI Desktop",
+      "2. Go to Visualizations pane",
+      "3. Click the three dots (...) for 'Get more visuals'",
+      "4. Select 'Get more visuals' from dropdown",
+      "5. Search for each visual by name",
+      "6. Click 'Add' to install",
+      "7. Visual will appear in your visualizations pane"
+    ],
+    "alternative_method": [
+      "1. Visit the download URLs provided",
+      "2. Click 'Get it now' on AppSource",
+      "3. Sign in with Power BI account",
+      "4. Visual will be added to your account automatically"
+    ]
+  },
+  "recommended_layout": {
+    "page_1_executive_overview": [
+      {
+        "visual": "Multi KPI",
+        "position": "Top row - spans full width",
+        "data": ["GMROI", "Total_Revenue", "Sell_Through_Rate", "Days_of_Supply"],
+        "formatting": "MCCNO colors with conditional formatting"
+      },
+      {
+        "visual": "HTML Content", 
+        "position": "Header",
+        "data": "MCCNO logo and dashboard title",
+        "formatting": "Brand colors and fonts"
+      },
+      {
+        "visual": "Bullet Chart",
+        "position": "Middle left",
+        "data": "GMROI vs 3.0 target",
+        "formatting": "Golden for good, red for poor performance"
+      },
+      {
+        "visual": "Enhanced Scatter Chart",
+        "position": "Middle right", 
+        "data": "Event attendance vs revenue",
+        "formatting": "Size by margin, color by event type"
+      }
+    ]
+  },
+  "mccno_color_integration": {
+    "primary_navy": "#003366",
+    "golden_accent": "#FFB500", 
+    "success_green": "#28A745",
+    "alert_red": "#DC3545",
+    "medium_gray": "#6C757D",
+    "neutral_support": "#F5F5F0",
+    "application": "Apply these colors to all visual backgrounds, data colors, and conditional formatting"
+  }
+}

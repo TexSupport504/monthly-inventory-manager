@@ -1,0 +1,193 @@
+-- MCCNO Executive Dashboard - DAX Measures (SAMPLE DATA VERSION)
+-- Generated from project specifications
+-- Date: 2025-08-21 
+-- Compatible with: events_sample.csv, inventory_sample.csv, sales_sample.csv
+
+-- ===============================
+-- PRIMARY KPI MEASURES
+-- ===============================
+
+GMROI = 
+DIVIDE(
+    SUM(sales_sample[gross_margin]), 
+    SUMX(inventory_sample, inventory_sample[qty] * inventory_sample[cost]) / COUNTROWS(inventory_sample), 
+    0
+)
+
+Total_Revenue = SUM(sales_sample[revenue])
+
+Sell_Through_Rate = 
+DIVIDE(
+    SUM(sales_sample[units_sold]), 
+    SUM(inventory_sample[qty]), 
+    0
+)
+
+Days_of_Supply = 
+DIVIDE(
+    AVERAGE(inventory_sample[qty]), 
+    CALCULATE(
+        AVERAGE(sales_sample[units_sold]), 
+        DATESINPERIOD(sales_sample[date], TODAY(), -30, DAY)
+    ), 
+    0
+)
+
+-- ===============================
+-- EVENT IMPACT MEASURES
+-- ===============================
+
+Event_Revenue = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    NOT(ISBLANK(sales_sample[event_id]))
+)
+
+Event_Conversion_Rate = 
+DIVIDE(
+    CALCULATE(SUM(sales_sample[units_sold]), NOT(ISBLANK(sales_sample[event_id]))), 
+    SUM(events_sample[est_attendance]), 
+    0
+)
+
+Pre_Event_Inventory = 
+CALCULATE(
+    SUM(inventory_sample[qty]), 
+    FILTER(
+        ALL(events_sample),
+        events_sample[start_dt] >= TODAY() - 7 && events_sample[start_dt] <= TODAY()
+    )
+)
+
+Post_Event_Inventory = 
+CALCULATE(
+    SUM(inventory_sample[qty]), 
+    FILTER(
+        ALL(events_sample),
+        events_sample[end_dt] <= TODAY() + 3 && events_sample[end_dt] >= TODAY()
+    )
+)
+
+-- ===============================
+-- RISK & ALERT MEASURES
+-- ===============================
+
+Stockout_Risk_SKUs = 
+CALCULATE(
+    DISTINCTCOUNT(inventory_sample[sku]), 
+    inventory_sample[qty] < inventory_sample[reorder_point]
+)
+
+Critical_Stock_Level = 
+CALCULATE(
+    DISTINCTCOUNT(inventory_sample[sku]), 
+    [Days_of_Supply] < 7
+)
+
+Low_Stock_Items = 
+CALCULATE(
+    DISTINCTCOUNT(inventory_sample[sku]), 
+    inventory_sample[qty] <= inventory_sample[safety_stock]
+)
+
+-- ===============================
+-- FINANCIAL MEASURES
+-- ===============================
+
+Gross_Margin_Percent = 
+DIVIDE(
+    SUM(sales_sample[gross_margin]), 
+    SUM(sales_sample[revenue]), 
+    0
+)
+
+Inventory_Value = 
+SUMX(inventory_sample, inventory_sample[qty] * inventory_sample[cost])
+
+Total_COGS = SUM(sales_sample[cogs])
+
+-- ===============================
+-- CATEGORY PERFORMANCE
+-- ===============================
+
+Promotional_Revenue = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    sales_sample[category] = "Promotional"
+)
+
+Apparel_Revenue = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    sales_sample[category] = "Apparel"
+)
+
+Packaging_Revenue = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    sales_sample[category] = "Packaging"
+)
+
+Shipping_Revenue = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    sales_sample[category] = "Shipping"
+)
+
+-- ===============================
+-- LOCATION ANALYSIS
+-- ===============================
+
+In_Store_Revenue = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    sales_sample[location] = "in_store"
+)
+
+Online_Revenue = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    sales_sample[channel] = "Online"
+)
+
+Walk_In_Revenue = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    sales_sample[channel] = "Walk-in"
+)
+
+-- ===============================
+-- TIME INTELLIGENCE MEASURES
+-- ===============================
+
+Revenue_YTD = 
+TOTALYTD(SUM(sales_sample[revenue]), sales_sample[date])
+
+Revenue_Previous_Month = 
+CALCULATE(
+    SUM(sales_sample[revenue]), 
+    PARALLELPERIOD(sales_sample[date], -1, MONTH)
+)
+
+Revenue_Growth_Percent = 
+DIVIDE(
+    [Total_Revenue] - [Revenue_Previous_Month], 
+    [Revenue_Previous_Month], 
+    0
+)
+
+-- ===============================
+-- CALCULATED COLUMNS (Add to respective tables)
+-- ===============================
+
+-- Add to sales_sample table:
+-- Margin_Percent = DIVIDE(sales_sample[gross_margin], sales_sample[revenue], 0)
+-- Days_Since_Sale = DATEDIFF(sales_sample[date], TODAY(), DAY)
+
+-- Add to inventory_sample table:
+-- Stock_Status = IF(inventory_sample[qty] <= inventory_sample[reorder_point], "Reorder", IF(inventory_sample[qty] <= inventory_sample[safety_stock], "Critical", "Normal"))
+-- Inventory_Days_Supply = DIVIDE(inventory_sample[qty], RELATED(Average_Daily_Sales), 0)
+
+-- Add to events_sample table:
+-- Event_Duration_Hours = DATEDIFF(events_sample[start_dt], events_sample[end_dt], HOUR)
+-- Revenue_Per_Attendee = DIVIDE(events_sample[actual_revenue], events_sample[est_attendance], 0)

@@ -1,0 +1,176 @@
+{
+  "kpi_targets": {
+    "gmroi": {
+      "target": 3.0,
+      "threshold_good": 3.5,
+      "threshold_warning": 2.5,
+      "threshold_critical": 2.0,
+      "description": "Gross Margin Return on Investment - measures profitability efficiency"
+    },
+    "sell_through_rate": {
+      "target": 0.75,
+      "threshold_good": 0.80,
+      "threshold_warning": 0.70,
+      "threshold_critical": 0.60,
+      "description": "Percentage of inventory sold vs available inventory"
+    },
+    "days_of_supply": {
+      "target": 30,
+      "optimal_range_min": 20,
+      "optimal_range_max": 40,
+      "threshold_critical_low": 10,
+      "threshold_critical_high": 60,
+      "description": "Days of inventory remaining at current usage rate"
+    },
+    "service_level": {
+      "target": 0.95,
+      "threshold_good": 0.98,
+      "threshold_warning": 0.90,
+      "threshold_critical": 0.85,
+      "description": "Percentage of demand met without stockout"
+    },
+    "shrink_rate": {
+      "target": 0.02,
+      "threshold_warning": 0.03,
+      "threshold_critical": 0.05,
+      "description": "Inventory variance as percentage of total inventory value"
+    },
+    "inventory_turnover": {
+      "target": 12.0,
+      "threshold_good": 15.0,
+      "threshold_warning": 8.0,
+      "threshold_critical": 6.0,
+      "description": "Annual inventory turnover rate"
+    }
+  },
+  "event_benchmarks": {
+    "conversion_rates": {
+      "conference": {
+        "promotional": 0.20,
+        "apparel": 0.10,
+        "packaging": 0.05,
+        "labels": 0.03,
+        "shipping": 0.02
+      },
+      "launch": {
+        "promotional": 0.35,
+        "apparel": 0.15,
+        "packaging": 0.08,
+        "labels": 0.05,
+        "shipping": 0.03
+      },
+      "training": {
+        "promotional": 0.15,
+        "apparel": 0.05,
+        "packaging": 0.10,
+        "labels": 0.08,
+        "shipping": 0.05
+      },
+      "customer_event": {
+        "promotional": 0.25,
+        "apparel": 0.20,
+        "packaging": 0.03,
+        "labels": 0.02,
+        "shipping": 0.01
+      }
+    },
+    "attach_rates": {
+      "conference": {
+        "promotional": 1.5,
+        "apparel": 1.0,
+        "packaging": 1.2,
+        "labels": 1.1,
+        "shipping": 1.0
+      },
+      "launch": {
+        "promotional": 2.0,
+        "apparel": 1.3,
+        "packaging": 1.5,
+        "labels": 1.2,
+        "shipping": 1.1
+      },
+      "training": {
+        "promotional": 1.3,
+        "apparel": 1.0,
+        "packaging": 1.8,
+        "labels": 1.5,
+        "shipping": 1.3
+      },
+      "customer_event": {
+        "promotional": 2.2,
+        "apparel": 1.8,
+        "packaging": 1.1,
+        "labels": 1.0,
+        "shipping": 1.0
+      }
+    }
+  },
+  "financial_targets": {
+    "revenue": {
+      "monthly_target": 750000,
+      "annual_target": 9000000,
+      "growth_rate": 0.12
+    },
+    "margins": {
+      "promotional": {
+        "target": 0.68,
+        "minimum": 0.60
+      },
+      "apparel": {
+        "target": 0.72,
+        "minimum": 0.65
+      },
+      "packaging": {
+        "target": 0.58,
+        "minimum": 0.50
+      },
+      "labels": {
+        "target": 0.62,
+        "minimum": 0.55
+      },
+      "shipping": {
+        "target": 0.65,
+        "minimum": 0.60
+      }
+    },
+    "working_capital": {
+      "inventory_investment_max": 2500000,
+      "days_payable": 30,
+      "cash_conversion_cycle": 45
+    }
+  },
+  "operational_targets": {
+    "stockout_incidents": {
+      "monthly_max": 5,
+      "revenue_impact_max": 50000
+    },
+    "reorder_efficiency": {
+      "order_frequency_days": 14,
+      "fill_rate_target": 0.98,
+      "lead_time_variance_max": 0.2
+    },
+    "data_quality": {
+      "count_accuracy": 0.995,
+      "sales_data_completeness": 0.99,
+      "price_accuracy": 1.0
+    }
+  },
+  "dashboard_refresh": {
+    "kpis": {
+      "frequency": "every_15_minutes",
+      "business_hours_only": true
+    },
+    "events": {
+      "frequency": "hourly",
+      "during_event_frequency": "every_5_minutes"
+    },
+    "inventory": {
+      "frequency": "daily",
+      "time": "06:00"
+    },
+    "historical_data": {
+      "frequency": "daily",
+      "time": "06:30"
+    }
+  }
+}
