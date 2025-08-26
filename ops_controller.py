@@ -46,9 +46,10 @@ class InventoryStrategist:
         self.data_path.mkdir(exist_ok=True)
         self.reports_path.mkdir(exist_ok=True)
         
-        print("🎯 ConventiCore - Convention Events Inventory Management System")
-        print("📊 Senior Economics & Inventory Strategist — Ready")
-        print("💡 \"Let's turn stock into profit, not décor\"\n")
+        print("ConventiCore - Convention Events Inventory Management System")
+        print("Senior Economics & Inventory Strategist — Ready")
+        print("\"Let's turn stock into profit, not décor\"")
+        print()
 
     def load_config(self):
         """Load system configuration parameters"""

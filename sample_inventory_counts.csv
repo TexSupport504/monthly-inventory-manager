@@ -1,4 +1,31 @@
 asof_date,checkpoint,location,sku,qty,uom,counter_id,notes
 2025-08-01,BOM,in_store,SKU001,150,EA,JD001,Fresh stock from delivery
 2025-08-01,BOM,back_of_store,SKU001,500,EA,JD001,Reserve inventory
+2025-08-01,BOM,in_store,SKU002,75,EA,JD001,Display area
+2025-08-01,BOM,back_of_store,SKU002,200,EA,JD001,Warehouse section A
+2025-08-01,BOM,in_store,SKU003,25,EA,SM002,Apparel display
+2025-08-01,BOM,back_of_store,SKU003,100,EA,SM002,Apparel storage
+2025-08-01,BOM,in_store,SKU004,10,ROLL,KL003,Packaging station
+2025-08-01,BOM,back_of_store,SKU004,50,ROLL,KL003,Bulk storage
+2025-08-01,BOM,in_store,SKU005,40,EA,JD001,Counter display
+2025-08-01,BOM,back_of_store,SKU005,120,EA,JD001,Storage cabinet B
 2025-08-15,MID,in_store,SKU001,135,EA,SM002,Some sales activity
+2025-08-15,MID,back_of_store,SKU001,485,EA,SM002,Moved 15 to floor
+2025-08-15,MID,in_store,SKU002,68,EA,KL003,Conference prep
+2025-08-15,MID,back_of_store,SKU002,185,EA,KL003,Prepping for event
+2025-08-15,MID,in_store,SKU003,23,EA,JD001,Good sales
+2025-08-15,MID,back_of_store,SKU003,95,EA,JD001,Moving inventory
+2025-08-15,MID,in_store,SKU004,8,ROLL,SM002,Used for packaging
+2025-08-15,MID,back_of_store,SKU004,47,ROLL,SM002,Still adequate
+2025-08-15,MID,in_store,SKU005,35,EA,KL003,Steady demand
+2025-08-15,MID,back_of_store,SKU005,115,EA,KL003,Reserve holding
+2025-08-31,EOM,in_store,SKU001,98,EA,JD001,Strong month sales
+2025-08-31,EOM,back_of_store,SKU001,445,EA,JD001,Need reorder soon
+2025-08-31,EOM,in_store,SKU002,52,EA,SM002,Event impact visible
+2025-08-31,EOM,back_of_store,SKU002,168,EA,SM002,Inventory moved well
+2025-08-31,EOM,in_store,SKU003,18,EA,KL003,Popular item
+2025-08-31,EOM,back_of_store,SKU003,82,EA,KL003,Below reorder point
+2025-08-31,EOM,in_store,SKU004,5,ROLL,JD001,Heavy usage
+2025-08-31,EOM,back_of_store,SKU004,38,ROLL,JD001,Need replenishment
+2025-08-31,EOM,in_store,SKU005,28,EA,SM002,Consistent performer
+2025-08-31,EOM,back_of_store,SKU005,105,EA,SM002,Adequate levels

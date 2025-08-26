@@ -1,0 +1,339 @@
+{
+  "name": "ConventiCore Executive Dashboard",
+  "description": "MCCNO Monthly Inventory Manager - Executive Intelligence Dashboard",
+  "version": "1.0.0",
+  "author": "ConventiCore Analytics",
+  
+  "dataModel": {
+    "tables": [
+      {
+        "name": "Events",
+        "source": "PowerQuery_DataModel.m",
+        "description": "Event data with status and performance metrics",
+        "columns": [
+          {"name": "event_id", "type": "Text", "key": true},
+          {"name": "account", "type": "Text"},
+          {"name": "name", "type": "Text"},
+          {"name": "venue_area", "type": "Text"},
+          {"name": "event_type", "type": "Text"},
+          {"name": "in_date", "type": "DateTime"},
+          {"name": "start_dt", "type": "DateTime"},
+          {"name": "end_dt", "type": "DateTime"},
+          {"name": "out_date", "type": "DateTime"},
+          {"name": "est_attendance", "type": "Int64"},
+          {"name": "contact", "type": "Text"},
+          {"name": "salesperson", "type": "Text"},
+          {"name": "Event Status", "type": "Text"},
+          {"name": "Event Year", "type": "Int64"},
+          {"name": "Event Month", "type": "Int64"},
+          {"name": "Event Quarter", "type": "Int64"}
+        ]
+      },
+      {
+        "name": "Inventory_KPIs",
+        "source": "PowerQuery_DataModel.m",
+        "description": "Inventory positions with calculated KPIs and stock status",
+        "columns": [
+          {"name": "asof_date", "type": "Date"},
+          {"name": "checkpoint", "type": "Text"},
+          {"name": "location", "type": "Text"},
+          {"name": "sku", "type": "Text", "key": true},
+          {"name": "qty", "type": "Int64"},
+          {"name": "uom", "type": "Text"},
+          {"name": "counter_id", "type": "Text"},
+          {"name": "notes", "type": "Text"},
+          {"name": "unique_key", "type": "Text"},
+          {"name": "sku_description", "type": "Text"},
+          {"name": "category", "type": "Text"},
+          {"name": "cost", "type": "Decimal"},
+          {"name": "price", "type": "Decimal"},
+          {"name": "lead_time_days", "type": "Int64"},
+          {"name": "avg_daily_sales", "type": "Decimal"},
+          {"name": "total_revenue_sku", "type": "Decimal"},
+          {"name": "total_units_sku", "type": "Int64"},
+          {"name": "inventory_value", "type": "Decimal"},
+          {"name": "days_of_supply", "type": "Decimal"},
+          {"name": "stock_status", "type": "Text"},
+          {"name": "gross_margin_pct", "type": "Decimal"},
+          {"name": "gmroi", "type": "Decimal"}
+        ]
+      },
+      {
+        "name": "Sales_Performance",
+        "source": "PowerQuery_DataModel.m", 
+        "description": "Sales transactions with margins and time intelligence",
+        "columns": [
+          {"name": "date", "type": "Date"},
+          {"name": "sku", "type": "Text"},
+          {"name": "units_sold", "type": "Int64"},
+          {"name": "revenue", "type": "Decimal"},
+          {"name": "event_id", "type": "Text"},
+          {"name": "channel", "type": "Text"},
+          {"name": "sku_description", "type": "Text"},
+          {"name": "category", "type": "Text"},
+          {"name": "cost", "type": "Decimal"},
+          {"name": "price", "type": "Decimal"},
+          {"name": "avg_unit_price", "type": "Decimal"},
+          {"name": "gross_margin", "type": "Decimal"},
+          {"name": "gross_margin_pct", "type": "Decimal"},
+          {"name": "sales_year", "type": "Int64"},
+          {"name": "sales_month", "type": "Int64"},
+          {"name": "sales_month_name", "type": "Text"},
+          {"name": "sales_quarter", "type": "Int64"},
+          {"name": "sales_week", "type": "Int64"},
+          {"name": "sales_day_of_week", "type": "Text"},
+          {"name": "sales_type", "type": "Text"}
+        ]
+      }
+    ],
+    
+    "relationships": [
+      {
+        "fromTable": "Sales_Performance",
+        "fromColumn": "event_id", 
+        "toTable": "Events",
+        "toColumn": "event_id",
+        "type": "manyToOne",
+        "crossFilterDirection": "single"
+      },
+      {
+        "fromTable": "Sales_Performance",
+        "fromColumn": "sku",
+        "toTable": "Inventory_KPIs", 
+        "toColumn": "sku",
+        "type": "manyToOne",
+        "crossFilterDirection": "single"
+      }
+    ]
+  },
+  
+  "measures": [
+    {
+      "name": "Total Revenue",
+      "table": "Sales_Performance",
+      "expression": "SUM(Sales_Performance[revenue])",
+      "format": "$#,##0"
+    },
+    {
+      "name": "Total Units Sold", 
+      "table": "Sales_Performance",
+      "expression": "SUM(Sales_Performance[units_sold])",
+      "format": "#,##0"
+    },
+    {
+      "name": "Avg Unit Price",
+      "table": "Sales_Performance", 
+      "expression": "DIVIDE([Total Revenue], [Total Units Sold], 0)",
+      "format": "$#,##0.00"
+    },
+    {
+      "name": "Total Inventory Value",
+      "table": "Inventory_KPIs",
+      "expression": "SUM(Inventory_KPIs[inventory_value])", 
+      "format": "$#,##0"
+    },
+    {
+      "name": "Total Inventory Units",
+      "table": "Inventory_KPIs",
+      "expression": "SUM(Inventory_KPIs[qty])",
+      "format": "#,##0"
+    },
+    {
+      "name": "Avg GMROI",
+      "table": "Inventory_KPIs",
+      "expression": "AVERAGE(Inventory_KPIs[gmroi])",
+      "format": "#,##0.0"
+    },
+    {
+      "name": "Critical Stock Items",
+      "table": "Inventory_KPIs", 
+      "expression": "CALCULATE(DISTINCTCOUNT(Inventory_KPIs[sku]), Inventory_KPIs[stock_status] = \"CRITICAL\")",
+      "format": "#,##0"
+    },
+    {
+      "name": "Event Revenue",
+      "table": "Sales_Performance",
+      "expression": "CALCULATE([Total Revenue], Sales_Performance[sales_type] = \"Event-Driven\")",
+      "format": "$#,##0"
+    },
+    {
+      "name": "Baseline Revenue", 
+      "table": "Sales_Performance",
+      "expression": "CALCULATE([Total Revenue], Sales_Performance[sales_type] = \"Baseline\")",
+      "format": "$#,##0"
+    },
+    {
+      "name": "Event Mix %",
+      "table": "Sales_Performance",
+      "expression": "DIVIDE([Event Revenue], [Total Revenue], 0)",
+      "format": "0.0%"
+    }
+  ],
+  
+  "pages": [
+    {
+      "name": "Executive Summary",
+      "displayName": "📊 Executive Summary",
+      "layout": "landscape",
+      "visuals": [
+        {
+          "type": "card",
+          "title": "Total Revenue",
+          "position": {"x": 0, "y": 0, "width": 200, "height": 100},
+          "measure": "Total Revenue",
+          "dataColors": {"primary": "#1F4E79"}
+        },
+        {
+          "type": "card", 
+          "title": "Inventory Value",
+          "position": {"x": 220, "y": 0, "width": 200, "height": 100},
+          "measure": "Total Inventory Value",
+          "dataColors": {"primary": "#70AD47"}
+        },
+        {
+          "type": "card",
+          "title": "Event Mix %", 
+          "position": {"x": 440, "y": 0, "width": 200, "height": 100},
+          "measure": "Event Mix %",
+          "dataColors": {"primary": "#C55A11"}
+        },
+        {
+          "type": "card",
+          "title": "Critical Items",
+          "position": {"x": 660, "y": 0, "width": 200, "height": 100},
+          "measure": "Critical Stock Items",
+          "dataColors": {"primary": "#E74856"}
+        },
+        {
+          "type": "columnChart",
+          "title": "Revenue by Month",
+          "position": {"x": 0, "y": 120, "width": 430, "height": 280},
+          "axis": "sales_month_name",
+          "values": ["Total Revenue"],
+          "legend": "category"
+        },
+        {
+          "type": "pieChart",
+          "title": "Revenue by Category",
+          "position": {"x": 450, "y": 120, "width": 410, "height": 280},
+          "legend": "category", 
+          "values": ["Total Revenue"]
+        },
+        {
+          "type": "table",
+          "title": "Top SKUs by Revenue",
+          "position": {"x": 0, "y": 420, "width": 860, "height": 200},
+          "columns": ["sku", "sku_description", "Total Revenue", "Total Units Sold", "Avg Unit Price"],
+          "sortBy": "Total Revenue",
+          "sortOrder": "desc"
+        }
+      ]
+    },
+    {
+      "name": "Inventory Analysis",
+      "displayName": "📦 Inventory Analysis", 
+      "layout": "landscape",
+      "visuals": [
+        {
+          "type": "gauge",
+          "title": "Avg GMROI",
+          "position": {"x": 0, "y": 0, "width": 280, "height": 200},
+          "measure": "Avg GMROI",
+          "target": 2.5,
+          "dataColors": {"primary": "#70AD47"}
+        },
+        {
+          "type": "donutChart",
+          "title": "Stock Status Distribution",
+          "position": {"x": 300, "y": 0, "width": 280, "height": 200},
+          "legend": "stock_status",
+          "values": ["Total Inventory Units"]
+        },
+        {
+          "type": "scatterChart",
+          "title": "Days of Supply vs Inventory Value", 
+          "position": {"x": 600, "y": 0, "width": 260, "height": 200},
+          "xAxis": "days_of_supply",
+          "yAxis": "inventory_value",
+          "legend": "category"
+        },
+        {
+          "type": "matrix",
+          "title": "Inventory KPIs by Category",
+          "position": {"x": 0, "y": 220, "width": 860, "height": 300},
+          "rows": ["category", "sku"],
+          "columns": ["stock_status"],
+          "values": ["Total Inventory Value", "Total Inventory Units", "Avg GMROI"]
+        }
+      ]
+    },
+    {
+      "name": "Sales Trends",
+      "displayName": "📈 Sales Trends",
+      "layout": "landscape", 
+      "visuals": [
+        {
+          "type": "lineChart",
+          "title": "Sales Trend by Week",
+          "position": {"x": 0, "y": 0, "width": 430, "height": 250},
+          "xAxis": "date",
+          "yAxis": ["Total Revenue"],
+          "legend": "sales_type"
+        },
+        {
+          "type": "columnChart", 
+          "title": "Event vs Baseline Sales",
+          "position": {"x": 450, "y": 0, "width": 410, "height": 250},
+          "xAxis": "sales_month_name",
+          "yAxis": ["Event Revenue", "Baseline Revenue"]
+        },
+        {
+          "type": "table",
+          "title": "Sales Performance by Channel",
+          "position": {"x": 0, "y": 270, "width": 430, "height": 250},
+          "columns": ["channel", "Total Revenue", "Total Units Sold", "Avg Unit Price"],
+          "sortBy": "Total Revenue",
+          "sortOrder": "desc"
+        },
+        {
+          "type": "heatmap",
+          "title": "Sales by Day of Week",
+          "position": {"x": 450, "y": 270, "width": 410, "height": 250},
+          "rows": "sales_day_of_week",
+          "columns": "sales_month_name", 
+          "values": "Total Revenue"
+        }
+      ]
+    }
+  ],
+  
+  "formatting": {
+    "theme": "MCCNO_PowerBI_Theme.json",
+    "fonts": {
+      "header": "Segoe UI Semibold",
+      "body": "Segoe UI"
+    },
+    "colors": {
+      "primary": "#1F4E79",
+      "secondary": "#70AD47", 
+      "accent": "#C55A11",
+      "warning": "#E74856",
+      "neutral": "#767171"
+    }
+  },
+  
+  "parameters": [
+    {
+      "name": "Data_Path",
+      "type": "Text",
+      "defaultValue": "E:\\OneDrive\\Documents\\GitHub\\monthly-inventory-manager\\",
+      "description": "Base path for CSV data files"
+    },
+    {
+      "name": "Refresh_Date",
+      "type": "DateTime", 
+      "defaultValue": "Today()",
+      "description": "Last data refresh timestamp"
+    }
+  ]
+}

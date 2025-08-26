@@ -1,0 +1,6 @@
+sku,desc,category,cost,price,lead_time_days,supplier
+SKU001,Convention Tote Bag,Promotional,2.00,4.00,14,PromoCorp
+SKU002,Logo T-Shirt Medium,Apparel,8.00,20.00,21,TextilePlus
+SKU003,Logo Hoodie Premium,Apparel,15.00,45.00,28,TextilePlus
+SKU004,Bubble Wrap Roll,Packaging,3.50,7.00,7,PackSupply
+SKU005,Convention Badge Holder,Promotional,0.80,3.20,10,BadgeCorp

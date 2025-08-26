@@ -9,6 +9,7 @@ from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
 from openpyxl.formatting.rule import DataBarRule, ColorScaleRule, CellIsRule
 from openpyxl.chart import LineChart, BarChart, PieChart, Reference
+from openpyxl.comments import Comment
 import os
 
 def create_command_center_workbook():
@@ -63,6 +64,10 @@ def create_command_center_workbook():
 
 def create_dashboard_sheet(ws, header_fill, header_font):
     """Create the Dashboard sheet with KPIs and visuals"""
+    
+    # Local styling
+    warning_fill = PatternFill(start_color="FFE6CC", end_color="FFE6CC", fill_type="solid")
+    success_fill = PatternFill(start_color="D4EDDA", end_color="D4EDDA", fill_type="solid")
     
     # Title
     ws["A1"] = "Event Inventory Command Center"
@@ -267,8 +272,8 @@ def create_counts_manual_sheet(ws, header_fill, header_font):
         cell.font = header_font
     
     # Add data validation for key fields
-    ws["C2"].comment = "BOM, MID, or EOM"
-    ws["D2"].comment = "in_store or back_of_store"
+    ws["C2"].comment = Comment("BOM, MID, or EOM", "System")
+    ws["D2"].comment = Comment("in_store or back_of_store", "System")
 
 def create_events_sheet(ws, header_fill, header_font):
     """Create events master sheet"""

@@ -1,278 +1,275 @@
-# MonthlyInventory Manager - Professional Inventory Management System
+﻿#  Monthly Inventory Manager (MIM)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Excel](https://img.shields.io/badge/Excel-2016+-green.svg)](https://www.microsoft.com/en-us/microsoft-365/excel)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
 
-> **"Let's turn stock into profit, not décor"** - Senior Economics & Inventory Strategist
+> **Comprehensive inventory management solution with Power BI dashboards, Excel automation, and intelligent analytics.**
 
-## 🎯 Mission Priority
+##  Features
 
-Deliver an operational-ready Excel workbook that serves as your unified command center for inventory management at events and operations, featuring dual intake capabilities, event-aware forecasting, and automated buy planning.
+###  **Inventory Dashboard (Power BI)**
+- Executive-level KPI reporting with MCCNO branding
+- Multi KPI visuals with GMROI, revenue, sell-through rates
+- Interactive analytics with drill-down capabilities  
+- Automated data refresh and scheduling
 
-**Core Functions:**
+###  **Excel Integration** 
+- Automated workbook generation from templates
+- Dynamic formatting and conditional styling
+- Multi-sheet reports with charts and pivot tables
+- Export to PDF and other formats
 
-1. **📊 Reporting Dashboard** - KPIs, visuals, risk monitoring
-2. **📦 Inventory Management Tool** - ROP, safety stock, buy planning  
-3. **📋 Flexible Reporting Pack** - Leadership-ready exports
+###  **Data Connectors**
+- CSV/Excel file imports with validation
+- Database connectivity (SQLite, SQL Server)
+- API integrations for real-time data
+- Automated data cleansing and transformation
 
-## 🚀 Quick Start (15 Minutes)
+###  **CLI Automation**
+- Batch processing for large datasets
+- Scheduled report generation  
+- Command-line tools for power users
+- Integration with task schedulers
 
-1. **Import Excel Templates**: Use CSV files in `excel_templates/` folder
-2. **Load Sample Data**: Import `sample_inventory_counts.csv` and `sample_sales_data.csv`  
-3. **Set Up Mobile Forms**: Follow Microsoft Forms integration guide
-4. **Run First Forecast**: `python ops_controller.py /forecast 2025-09`
-5. **Generate Buy Plan**: `python ops_controller.py /plan 2025-09`
+###  **ETL & Transform**
+- Data quality validation and cleansing
+- Business rule enforcement
+- Calculated fields and aggregations
+- Historical data tracking and versioning
 
-## 🛠️ Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/[username]/monthly-inventory-manager.git
-cd monthly-inventory-manager
-
-# Install dependencies (optional - for Python controllers)
-pip install pandas numpy
-
-# Import Excel templates
-# Follow Excel_Setup_Instructions.md for step-by-step guidance
-```
-
-## 📱 Dual Intake Strategy
-
-**Primary: Mobile Forms**
-
-- Microsoft Forms → Power Automate → Excel
-- Real-time mobile counting with photos
-- Automatic validation and deduplication
-
-**Secondary: Manual Transcription**  
-
-- Paper backup → Excel grid → Canonical table
-- Offline capability for reliable operations
-- Built-in exception handling
-
-## 🎮 Operating Commands
-
-```bash
-# Data Ingestion (with Event Rules Processing)
-python ops_controller.py /ingest events Events.xlsx  # Process event calendar with full lifecycle data
-python ops_controller.py /ingest audits [file]       # Load inventory counts  
-python ops_controller.py /ingest sales [file]        # Load sales history
-
-# System Setup
-python ops_controller.py /forms setup ms             # Configure Microsoft Forms
-python ops_controller.py /counts manual enable       # Enable manual entry
-python ops_controller.py /counts unify              # Merge all count sources
-
-# Analytics & Planning (Event-Aware)
-python ops_controller.py /forecast [YYYY-MM]        # Event-aware forecasting using attendance data
-python ops_controller.py /plan [YYYY-MM]            # Generate buy recommendations factoring event lifecycle  
-python ops_controller.py /pnl [YYYY-MM]             # P&L analysis with GMROI
-
-# Reporting
-python ops_controller.py /build workbook             # Create complete Excel file with processed event data
-python ops_controller.py /publish pack [YYYY-MM]    # Export executive reports
-```
-
-## 📊 Key Features
-
-### 🔮 Event-Aware Forecasting
-
-- Baseline demand from sales history
-- **Forecast Attendance** as authoritative source for event impact modeling  
-- Conversion & attach rate calculations using official attendee projections
-- Event lifecycle consideration (In-Date → Start → End → Out-Date)
-- Seasonal and promotional lift factors
-- Pre-event setup and post-event teardown inventory requirements
-
-### 📦 Intelligent Buy Planning
-
-- Safety stock at configurable service levels (default 95%)
-- Reorder point calculations with lead time variance
-- Budget-constrained recommendations  
-- Priority ranking (HIGH/MEDIUM/LOW)
-
-### 📱 Mobile-First Data Collection
-
-- Microsoft Forms integration for field teams
-- Photo capture for count verification
-- Offline-capable manual transcription backup
-- Real-time validation and duplicate detection
-
-### 📈 Executive Dashboard
-
-- GMROI, sell-through, shrink analysis
-- Days of supply monitoring
-- Stockout risk assessment
-- Exception reporting with resolution tracking
-
-## 📋 Data Contracts & Event Rules
-
-### 🎪 Event Data Rules & Definitions
-
-**Event Lifecycle Understanding:**
-1. **In-Date**: When event setup begins and crews arrive onsite (impacts pre-event inventory needs)
-2. **Out-Date**: Load-out date when crews depart (impacts post-event inventory reconciliation)
-3. **Start Date**: Actual event commencement (primary demand period begins)
-4. **End Date**: Event conclusion (primary demand period ends)
-5. **Forecast Attendance**: The authoritative attendee count for all analyses and projections
-
-**Data Processing Flow:**
-- Import Events.xlsx in original format with full column structure
-- Clean and transform data automatically via ingestion process
-- Load processed data to workbook sheets for operational team use
-- Maintain data lineage and audit trail throughout process
-
-### 📊 Data Intake Formats
-
-All intake accepts CSV, JSON, Excel, or table text format:
-
-**Event** (from Events.xlsx): `Event ID`, `Account`, `Description`, `Anchor Venue`, `Span of Attendees`, `In Date`, `Start Date`, `End Date`, `Out Date`, `Forecast Attendance`, `Contact`, `Salesperson`  
-**SKU**: `sku`, `desc`, `category`, `cost`, `price`, `lead_time_days`  
-**Inventory**: `asof_date`, `checkpoint`, `location`, `sku`, `qty`, `uom`, `counter_id`, `notes`  
-**Sales**: `date`, `sku`, `units_sold`, `revenue`
-
-## 🏗️ System Architecture
-
-### Excel Workbook Structure (17 Worksheets)
-
-- **Dashboard** - KPIs and executive summary
-- **Plan_Buy** - Purchase recommendations with budget constraints
-- **ROP_SS** - Reorder points and safety stock calculations
-- **PnL** - Profit & loss analysis with GMROI tracking
-- **Shrink** - Inventory variance monitoring
-- **Counts_Entry** - Canonical inventory count table
-- **Forms_Inbox** - Microsoft Forms integration pipeline
-- **Counts_Manual** - Manual transcription capability
-- **Events** - Event calendar and attendance tracking
-- **SKU** - Product master data
-- **Sales** - Transaction history
-- **Config** - System parameters and thresholds
-
-### Integration Points
-
-1. **Microsoft Forms** → Power Automate → Excel (Real-time mobile intake)
-2. **Manual Entry** → Excel Validation → Canonical Table (Paper backup)
-3. **Power Query** → Data Refresh → KPI Updates (Automated processing)
-4. **Python Controller** → CSV Export → Executive Reports (On-demand analytics)
-
-## 📈 Performance Metrics
-
-### Financial KPIs
-
-- **GMROI**: Target ≥3.0x for healthy inventory turns
-- **Gross Margin %**: Monitor profitability by category  
-- **Sell-Through %**: Target ≥75% for demand accuracy
-
-### Operational KPIs
-
-- **Days of Supply**: Maintain 20-40 days optimal range
-- **Stockout Risk**: Minimize SKUs below reorder point
-- **Shrink %**: Control variance <2% of inventory value
-
-## 🔧 Configuration
-
-Key system parameters (customizable via Config sheet):
-
-```yaml
-Z Service Level: 1.65        # 95% service level for safety stock
-Target Days of Supply: 30    # Inventory planning horizon
-Default Lead Time: 14        # Days, when SKU data missing  
-Max Cash Per Order: $50,000  # Budget constraint per purchase
-Shrink Threshold: 5%         # Flag variances above this level
-Event Conversion: 15%        # Default attendee conversion rate
-Attach Rate: 1.2            # Items per transaction multiplier
-```
-
-## 🚀 Getting Started
+##  Quick Start (5 minutes)
 
 ### Prerequisites
+-  **Git** - https://git-scm.com/
+-  **Python 3.8+** - https://python.org/
+-  **Power BI Desktop** (Windows) - https://powerbi.microsoft.com/desktop/
 
-- Microsoft Excel 2016+ (with Power Query)
-- Python 3.8+ (optional, for command-line operations)
-- Microsoft 365 account (for Forms integration)
-- SharePoint access (recommended for collaboration)
-
-### Quick Setup
-
-1. **Download**: Clone this repository or download ZIP
-2. **Import Templates**: Open Excel, import CSV files from `excel_templates/`
-3. **Load Sample Data**: Import test data to verify calculations
-4. **Configure Forms**: Set up mobile data collection (optional)
-5. **Test Operations**: Run forecast and buy planning commands
-
-### Sample Usage
-
+### Setup
 ```bash
-# Load sample data
-python ops_controller.py /ingest events
-python ops_controller.py /ingest audits
+# 1. Clone repository
+git clone https://github.com/TexSupport504/monthly-inventory-manager.git
+cd monthly-inventory-manager
 
-# Generate September forecast
-python ops_controller.py /forecast 2025-09
+# 2. Run setup assistant (handles everything!)
+python tools/setup-assistant/setup.py
+# or Windows PowerShell:
+.\tools\setup-assistant\setup.ps1
 
-# Create buy plan within budget
-python ops_controller.py /plan 2025-09
+# 3. Generate your first report
+python generate_workbook.py
 
-# Export executive report pack
-python ops_controller.py /publish pack 2025-09
+# 4. Launch operations controller  
+python ops_controller.py
 ```
 
-## 📁 File Structure
+** That's it! You now have a complete inventory management system.**
 
-```text
+### What You Get Out of the Box
+```
 monthly-inventory-manager/
-├── README.md                          # This file
-├── Excel_Setup_Instructions.md        # Step-by-step Excel setup
-├── forms_integration_spec.md           # Microsoft Forms integration
-├── powerapps_specification.md          # Mobile app specification  
-├── DEPLOYMENT_GUIDE.md                # Complete implementation guide
-├── 
-├── ops_controller.py                   # Python operational controller
-├── create_excel_templates.py          # CSV template generator
-├── 
-├── excel_templates/                    # 17 CSV templates for Excel import
-├── sample_inventory_counts.csv         # Test count data
-├── sample_sales_data.csv              # Test sales data
-└── forms_specification.json           # Microsoft Forms configuration
+  features/inventory-dashboard/    # Power BI dashboard with MCCNO theme
+  data/                          # Your inventory data
+  reports/                       # Generated Excel/PDF reports  
+  tools/setup-assistant/         # Friendly setup automation
+  ops_controller.py              # Main operations interface
+  docs/guides/                   # Comprehensive documentation
 ```
 
-## 🤝 Contributing
+##  Documentation
 
-This is an open-source inventory management system designed for events and operations. Contributions welcome!
+| Guide | Description |
+|-------|-------------|
+|  [**Quick Start**](docs/guides/quickstart.md) | Get running in 5 minutes |
+|  [**Setup Guide**](docs/guides/setup.md) | Detailed installation & configuration |
+|  [**Troubleshooting**](docs/guides/troubleshooting.md) | Common issues & solutions |
+|  [**Power BI Guide**](features/inventory-dashboard/Power_BI_Setup_Guide.md) | Dashboard setup & customization |
 
-1. Fork the repository
-2. Create a feature branch
-3. Test your changes with sample data
-4. Submit a pull request
+##  Architecture
 
-## 📄 License
+```mermaid
+graph TB
+    A[Data Sources] --> B[Data Connectors]
+    B --> C[ETL Transform]
+    C --> D[Core Engine]
+    D --> E[Power BI Dashboard]
+    D --> F[Excel Reports]
+    D --> G[CLI Automation]
+    
+    H[Setup Assistant] --> D
+    I[Web Interface] --> D
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Core Components
 
-## 🎯 Use Cases
+####  **Operations Controller** (`ops_controller.py`)
+Central hub for all MIM operations with interactive menu system.
 
-Perfect for organizations that need sophisticated inventory management at:
+####  **Power BI Dashboard** (`features/inventory-dashboard/`)
+Executive reporting with:
+- MCCNO branded theme (#003366 navy, #FFB500 golden)
+- Multi KPI visuals (GMROI, Revenue, Sell-Through, Days Supply)  
+- Interactive charts and drill-through functionality
+- Automated data refresh capabilities
 
-- **Trade Shows & Conventions** - Booth inventory and promotional items
-- **Corporate Events** - Conference materials and branded merchandise  
-- **Pop-up Retail** - Temporary store inventory optimization
-- **Event Marketing** - Promotional product distribution
-- **Training Programs** - Materials and supplies management
+####  **Excel Generator** (`generate_workbook.py`)
+Automated report creation:
+- Template-based workbook generation
+- Dynamic charts and pivot tables
+- Conditional formatting and styling
+- Multi-format export (XLSX, PDF)
 
-## 🏆 Key Benefits
+####  **Setup Assistant** (`tools/setup-assistant/`)
+Friendly setup automation:
+- Cross-platform compatibility (Windows/macOS/Linux)
+- Prerequisite checking and validation
+- Configuration file generation
+- Sample data creation and testing
 
-- **50% reduction** in inventory counting time through mobile automation
-- **90% improvement** in data accuracy via validation and deduplication
-- **Event-driven planning** that accounts for attendance impact on demand  
-- **Budget-conscious recommendations** preventing overstock situations
-- **Real-time visibility** into inventory performance and risk factors
-- **Professional reporting** ready for executive presentation
+##  Who Is This For?
+
+###  **Inventory Managers**
+- Monthly reporting automation
+- KPI tracking and trend analysis
+- Exception reporting for critical stock levels
+- Executive summaries and presentations
+
+###  **Business Analysts**  
+- Data transformation and cleansing
+- Advanced analytics and forecasting
+- Custom report generation
+- Dashboard creation and maintenance
+
+###  **IT Professionals**
+- Automated data pipeline management
+- Integration with existing systems
+- Scheduled batch processing
+- System monitoring and maintenance
+
+###  **Executives**
+- High-level KPI dashboards
+- Performance trend analysis
+- Strategic decision support
+- Board presentation materials
+
+##  Development
+
+### Project Structure
+```
+monthly-inventory-manager/
+ features/                   # Feature modules
+    inventory-dashboard/    # Power BI dashboard  
+    data-connectors/        # Import/export utilities
+    etl-transform/          # Data processing
+    report-pack/            # Report generators
+    cli-automation/         # Command-line tools
+ tools/                      # Development utilities
+ data/                       # Data storage
+ reports/                    # Generated outputs
+ docs/                       # Documentation
+ tests/                      # Unit tests
+ samples/                    # Sample data & examples
+```
+
+### Contributing
+
+We welcome contributions! Please see:
+-  [**CONTRIBUTING.md**](CONTRIBUTING.md) - Contribution guidelines
+-  [**CODE_OF_CONDUCT.md**](CODE_OF_CONDUCT.md) - Community standards  
+-  [**SECURITY.md**](SECURITY.md) - Security policy
+
+### Development Setup
+```bash
+# Clone with development tools
+git clone https://github.com/TexSupport504/monthly-inventory-manager.git
+cd monthly-inventory-manager
+
+# Install development dependencies
+pip install -r requirements-dev.txt
+
+# Run tests
+python -m pytest tests/
+
+# Pre-commit hooks  
+pre-commit install
+```
+
+##  Configuration
+
+### Environment Configuration (`.env`)
+```ini
+# Database
+DATABASE_TYPE=sqlite
+DATABASE_PATH=./data/inventory.db
+
+# Power BI Integration  
+POWERBI_WORKSPACE=your-workspace
+POWERBI_DATASET_ID=your-dataset-id
+
+# Features
+ENABLE_WEB_INTERFACE=true
+ENABLE_AUTO_REFRESH=false
+LOG_LEVEL=INFO
+```
+
+### Application Configuration (`config.yaml`)
+```yaml
+app:
+  name: "Monthly Inventory Manager"
+  version: "0.1.0"
+  
+features:
+  inventory_dashboard: true
+  data_connectors: true
+  etl_transform: true
+  report_pack: true
+  cli_automation: true
+```
+
+##  Support
+
+### Getting Help
+1.  **Documentation** - Check our comprehensive guides
+2.  **Search Issues** - Look for similar problems
+3.  **Discussions** - Community Q&A
+4.  **Report Bug** - Open a detailed issue
+
+### Issue Templates
+-  [Bug Report](.github/ISSUE_TEMPLATE/bug_report.md)
+-  [Feature Request](.github/ISSUE_TEMPLATE/feature_request.md)
+-  [Question](.github/ISSUE_TEMPLATE/question.md)
+
+##  License
+
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+
+##  Roadmap
+
+### Version 0.2.0 (Q4 2025)
+- [ ] Web-based dashboard interface
+- [ ] Advanced forecasting algorithms  
+- [ ] Multi-tenant support
+- [ ] API endpoints for integration
+
+### Version 0.3.0 (Q1 2026)
+- [ ] Mobile responsive interface
+- [ ] Real-time notifications
+- [ ] Advanced security features
+- [ ] Cloud deployment options
+
+##  Acknowledgments
+
+- **Power BI Community** - Dashboard inspiration and techniques
+- **Python Data Science Community** - Libraries and tools
+- **MCCNO** - Branding and business requirements
+- **Contributors** - Thank you for making this better!
 
 ---
 
-**Senior Economics & Inventory Strategist — MonthlyInventory Manager**  
-*"Let's turn stock into profit, not décor"*
+<div align="center">
 
-Built with ❤️ for inventory professionals who demand operational excellence.
+** Star this repo if MIM helps your inventory management!**
+
+[** Documentation**](docs/)  [** Quick Start**](docs/guides/quickstart.md)  [** Issues**](https://github.com/TexSupport504/monthly-inventory-manager/issues)  [** Discussions**](https://github.com/TexSupport504/monthly-inventory-manager/discussions)
+
+</div>

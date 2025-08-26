@@ -1,0 +1,86 @@
+﻿name: Feature Request
+description: Suggest an idea or enhancement for MIM
+title: "[FEATURE] "
+labels: ["enhancement", "needs-discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! 
+        
+        Please search existing issues and discussions before creating a new request.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: Is your feature request related to a problem? Describe it.
+      placeholder: I'm frustrated when...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like
+      placeholder: I would like to see...
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Describe alternatives you've considered
+      placeholder: I've also considered...
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which part of MIM does this relate to?
+      options:
+        - Power BI Dashboard
+        - Excel Integration
+        - Data Connectors
+        - ETL Transform
+        - CLI Automation
+        - Setup Assistant
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would improve workflow
+        - High - Critical for my use case
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Describe your specific use case for this feature
+      placeholder: I need this feature because...
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, mockups, or examples
+      placeholder: Additional information...
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues and discussions
+          required: true
+        - label: This feature would benefit other users, not just me
+          required: true
+        - label: I would be willing to help implement this feature
+          required: false
