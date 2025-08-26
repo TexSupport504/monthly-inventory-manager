@@ -1,0 +1,17 @@
+{
+  "name": "jan-copilot-voice",
+  "version": "1.0.0",
+  "description": "VS Code extension for hands-free Jan-to-Copilot voice workflow integration.",
+  "main": "extension.js",
+  "scripts": {
+    "start": "node extension.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "ws": "^8.13.0",
+    "clipboardy": "^3.0.0"
+  },
+  "keywords": ["voice", "copilot", "jan", "vscode", "automation"],
+  "author": "TexSupport504",
+  "license": "MIT"
+}
