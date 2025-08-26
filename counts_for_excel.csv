@@ -1,0 +1,31 @@
+asof_date,checkpoint,location,sku,qty,uom,counter_id,notes,unique_key
+2025-08-01,BOM,in_store,SKU001,150,EA,JD001,Fresh stock from delivery,20250801|BOM|in_store|SKU001|JD001
+2025-08-01,BOM,back_of_store,SKU001,500,EA,JD001,Reserve inventory,20250801|BOM|back_of_store|SKU001|JD001
+2025-08-01,BOM,in_store,SKU002,75,EA,JD001,Display area,20250801|BOM|in_store|SKU002|JD001
+2025-08-01,BOM,back_of_store,SKU002,200,EA,JD001,Warehouse section A,20250801|BOM|back_of_store|SKU002|JD001
+2025-08-01,BOM,in_store,SKU003,25,EA,SM002,Apparel display,20250801|BOM|in_store|SKU003|SM002
+2025-08-01,BOM,back_of_store,SKU003,100,EA,SM002,Apparel storage,20250801|BOM|back_of_store|SKU003|SM002
+2025-08-01,BOM,in_store,SKU004,10,ROLL,KL003,Packaging station,20250801|BOM|in_store|SKU004|KL003
+2025-08-01,BOM,back_of_store,SKU004,50,ROLL,KL003,Bulk storage,20250801|BOM|back_of_store|SKU004|KL003
+2025-08-01,BOM,in_store,SKU005,40,EA,JD001,Counter display,20250801|BOM|in_store|SKU005|JD001
+2025-08-01,BOM,back_of_store,SKU005,120,EA,JD001,Storage cabinet B,20250801|BOM|back_of_store|SKU005|JD001
+2025-08-15,MID,in_store,SKU001,135,EA,SM002,Some sales activity,20250815|MID|in_store|SKU001|SM002
+2025-08-15,MID,back_of_store,SKU001,485,EA,SM002,Moved 15 to floor,20250815|MID|back_of_store|SKU001|SM002
+2025-08-15,MID,in_store,SKU002,68,EA,KL003,Conference prep,20250815|MID|in_store|SKU002|KL003
+2025-08-15,MID,back_of_store,SKU002,185,EA,KL003,Prepping for event,20250815|MID|back_of_store|SKU002|KL003
+2025-08-15,MID,in_store,SKU003,23,EA,JD001,Good sales,20250815|MID|in_store|SKU003|JD001
+2025-08-15,MID,back_of_store,SKU003,95,EA,JD001,Moving inventory,20250815|MID|back_of_store|SKU003|JD001
+2025-08-15,MID,in_store,SKU004,8,ROLL,SM002,Used for packaging,20250815|MID|in_store|SKU004|SM002
+2025-08-15,MID,back_of_store,SKU004,47,ROLL,SM002,Still adequate,20250815|MID|back_of_store|SKU004|SM002
+2025-08-15,MID,in_store,SKU005,35,EA,KL003,Steady demand,20250815|MID|in_store|SKU005|KL003
+2025-08-15,MID,back_of_store,SKU005,115,EA,KL003,Reserve holding,20250815|MID|back_of_store|SKU005|KL003
+2025-08-31,EOM,in_store,SKU001,98,EA,JD001,Strong month sales,20250831|EOM|in_store|SKU001|JD001
+2025-08-31,EOM,back_of_store,SKU001,445,EA,JD001,Need reorder soon,20250831|EOM|back_of_store|SKU001|JD001
+2025-08-31,EOM,in_store,SKU002,52,EA,SM002,Event impact visible,20250831|EOM|in_store|SKU002|SM002
+2025-08-31,EOM,back_of_store,SKU002,168,EA,SM002,Inventory moved well,20250831|EOM|back_of_store|SKU002|SM002
+2025-08-31,EOM,in_store,SKU003,18,EA,KL003,Popular item,20250831|EOM|in_store|SKU003|KL003
+2025-08-31,EOM,back_of_store,SKU003,82,EA,KL003,Below reorder point,20250831|EOM|back_of_store|SKU003|KL003
+2025-08-31,EOM,in_store,SKU004,5,ROLL,JD001,Heavy usage,20250831|EOM|in_store|SKU004|JD001
+2025-08-31,EOM,back_of_store,SKU004,38,ROLL,JD001,Need replenishment,20250831|EOM|back_of_store|SKU004|JD001
+2025-08-31,EOM,in_store,SKU005,28,EA,SM002,Consistent performer,20250831|EOM|in_store|SKU005|SM002
+2025-08-31,EOM,back_of_store,SKU005,105,EA,SM002,Adequate levels,20250831|EOM|back_of_store|SKU005|SM002
