@@ -1,0 +1,33 @@
+{
+  "name": "jan-copilot-voice-dev",
+  "displayName": "Jan Copilot Voice Dev Integration",
+  "description": "Voice-driven workflow connecting Jan AI assistant with GitHub Copilot in VS Code.",
+  "version": "0.1.0",
+  "publisher": "your-publisher",
+  "engines": {
+    "vscode": ">=1.70.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "janCopilotVoiceDev.startWatcher",
+        "title": "Start Jan-Copilot Voice Dev Watcher"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo No tests yet"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "ws": "^8.13.0",
+    "clipboardy": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}

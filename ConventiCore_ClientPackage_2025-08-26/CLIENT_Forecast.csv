@@ -1,0 +1,4 @@
+sku,description,category,period,baseline_daily,baseline_total,event_lift,total_forecast,demand_std,confidence
+SKU001,Branded Pen,Promotional,2025-09,20.4,612.0,0,612.0,7.3,HIGH
+SKU002,Small Shipping Box,Packaging,2025-09,16.75,502.5,0,502.5,4.27,HIGH
+SKU003,T-Shirt Large,Apparel,2025-09,6.25,187.5,0,187.5,1.71,HIGH

@@ -1,0 +1,101 @@
+sku,description,category,vendor,cost,price,current_stock,location,lead_time
+SKU1000,Lighting - SKU1000,Lighting,EventPro Supply,235.39,334.83,35,Zone-A18,3
+SKU1001,Tech Equipment - SKU1001,Tech Equipment,EventPro Supply,36.17,49.74,129,Zone-A18,5
+SKU1002,Tech Equipment - SKU1002,Tech Equipment,Convention Masters,193.45,275.2,1,Zone-B14,7
+SKU1003,Decor - SKU1003,Decor,Convention Masters,105.74,191.48,26,Zone-A13,3
+SKU1004,Catering - SKU1004,Catering,StageWorld,251.4,464.0,117,Zone-A13,3
+SKU1005,Decor - SKU1005,Decor,CateringSource,256.94,485.46,147,Zone-B03,3
+SKU1006,Furniture - SKU1006,Furniture,StageWorld,394.46,743.26,25,Zone-D09,10
+SKU1007,Catering - SKU1007,Catering,Convention Masters,163.82,224.04,68,Zone-A20,5
+SKU1008,Furniture - SKU1008,Furniture,Convention Masters,198.35,280.85,142,Zone-B11,3
+SKU1009,Furniture - SKU1009,Furniture,EventPro Supply,326.89,497.18,16,Zone-B19,7
+SKU1010,Furniture - SKU1010,Furniture,CateringSource,212.21,404.85,117,Zone-B09,5
+SKU1011,Furniture - SKU1011,Furniture,CateringSource,235.51,332.12,149,Zone-D19,10
+SKU1012,Catering - SKU1012,Catering,Convention Masters,399.0,522.95,126,Zone-A02,3
+SKU1013,Staging - SKU1013,Staging,CateringSource,359.98,784.93,16,Zone-D13,14
+SKU1014,Security - SKU1014,Security,DecorPlus,119.28,195.93,2,Zone-A18,7
+SKU1015,Catering - SKU1015,Catering,EventPro Supply,135.06,179.16,0,Zone-C17,5
+SKU1016,Lighting - SKU1016,Lighting,CateringSource,124.61,201.8,50,Zone-B12,5
+SKU1017,Audio/Visual - SKU1017,Audio/Visual,DecorPlus,360.7,510.6,92,Zone-C08,3
+SKU1018,Furniture - SKU1018,Furniture,DecorPlus,380.11,482.17,124,Zone-A18,5
+SKU1019,Staging - SKU1019,Staging,CateringSource,675.28,1384.2,67,Zone-D07,14
+SKU1020,Furniture - SKU1020,Furniture,CateringSource,141.89,283.24,95,Zone-D17,10
+SKU1021,Lighting - SKU1021,Lighting,Convention Masters,106.17,155.97,150,Zone-B19,5
+SKU1022,Audio/Visual - SKU1022,Audio/Visual,EventPro Supply,610.1,882.87,17,Zone-A11,3
+SKU1023,Furniture - SKU1023,Furniture,StageWorld,275.87,378.32,33,Zone-D08,10
+SKU1024,Tech Equipment - SKU1024,Tech Equipment,Convention Masters,60.37,104.27,90,Zone-D14,10
+SKU1025,Audio/Visual - SKU1025,Audio/Visual,CateringSource,574.75,1101.76,15,Zone-D11,3
+SKU1026,Furniture - SKU1026,Furniture,Convention Masters,96.33,150.17,108,Zone-B09,10
+SKU1027,Furniture - SKU1027,Furniture,EventPro Supply,191.17,361.14,140,Zone-A02,14
+SKU1028,Audio/Visual - SKU1028,Audio/Visual,EventPro Supply,752.14,1563.66,42,Zone-D16,10
+SKU1029,Furniture - SKU1029,Furniture,TechRental Inc,363.42,483.96,0,Zone-D09,10
+SKU1030,Decor - SKU1030,Decor,TechRental Inc,286.22,510.74,142,Zone-D05,5
+SKU1031,Decor - SKU1031,Decor,Convention Masters,388.27,645.82,138,Zone-A11,3
+SKU1032,Audio/Visual - SKU1032,Audio/Visual,DecorPlus,459.91,982.15,135,Zone-B02,14
+SKU1033,Lighting - SKU1033,Lighting,Convention Masters,67.13,89.55,60,Zone-D04,14
+SKU1034,Furniture - SKU1034,Furniture,DecorPlus,247.94,420.39,107,Zone-C09,5
+SKU1035,Catering - SKU1035,Catering,Convention Masters,124.61,162.57,76,Zone-D11,3
+SKU1036,Audio/Visual - SKU1036,Audio/Visual,TechRental Inc,553.75,1024.66,25,Zone-A18,5
+SKU1037,Decor - SKU1037,Decor,Convention Masters,374.97,714.21,62,Zone-C10,5
+SKU1038,Security - SKU1038,Security,DecorPlus,288.83,487.93,135,Zone-A18,7
+SKU1039,Lighting - SKU1039,Lighting,Convention Masters,116.12,202.61,141,Zone-B09,7
+SKU1040,Furniture - SKU1040,Furniture,CateringSource,153.58,268.76,67,Zone-D09,3
+SKU1041,Lighting - SKU1041,Lighting,CateringSource,155.89,224.23,0,Zone-C05,7
+SKU1042,Staging - SKU1042,Staging,CateringSource,641.84,1415.68,143,Zone-A04,3
+SKU1043,Staging - SKU1043,Staging,DecorPlus,236.03,441.19,141,Zone-B14,5
+SKU1044,Audio/Visual - SKU1044,Audio/Visual,StageWorld,387.02,830.73,10,Zone-C07,5
+SKU1045,Lighting - SKU1045,Lighting,StageWorld,245.03,426.86,104,Zone-B08,5
+SKU1046,Staging - SKU1046,Staging,TechRental Inc,224.79,502.75,85,Zone-D08,7
+SKU1047,Staging - SKU1047,Staging,CateringSource,308.1,730.85,120,Zone-B07,10
+SKU1048,Catering - SKU1048,Catering,StageWorld,332.7,631.15,57,Zone-A07,10
+SKU1049,Catering - SKU1049,Catering,StageWorld,349.13,689.02,71,Zone-C17,10
+SKU1050,Catering - SKU1050,Catering,EventPro Supply,68.25,134.89,45,Zone-C02,3
+SKU1051,Tech Equipment - SKU1051,Tech Equipment,StageWorld,298.2,432.68,130,Zone-A13,14
+SKU1052,Furniture - SKU1052,Furniture,StageWorld,41.64,64.5,133,Zone-B12,10
+SKU1053,Lighting - SKU1053,Lighting,CateringSource,280.19,451.55,31,Zone-C17,7
+SKU1054,Tech Equipment - SKU1054,Tech Equipment,StageWorld,175.9,252.68,32,Zone-B14,10
+SKU1055,Staging - SKU1055,Staging,DecorPlus,769.11,1465.97,0,Zone-C10,5
+SKU1056,Tech Equipment - SKU1056,Tech Equipment,DecorPlus,252.5,368.09,113,Zone-D07,14
+SKU1057,Security - SKU1057,Security,CateringSource,88.63,112.37,131,Zone-C03,5
+SKU1058,Decor - SKU1058,Decor,Convention Masters,327.46,431.56,11,Zone-B16,14
+SKU1059,Lighting - SKU1059,Lighting,TechRental Inc,153.61,248.06,49,Zone-D16,10
+SKU1060,Furniture - SKU1060,Furniture,Convention Masters,271.02,326.43,27,Zone-D08,5
+SKU1061,Security - SKU1061,Security,EventPro Supply,234.03,452.6,31,Zone-D05,10
+SKU1062,Catering - SKU1062,Catering,TechRental Inc,254.74,452.28,129,Zone-D18,10
+SKU1063,Staging - SKU1063,Staging,CateringSource,1061.49,2069.99,63,Zone-C17,10
+SKU1064,Furniture - SKU1064,Furniture,StageWorld,189.95,336.37,60,Zone-C11,7
+SKU1065,Lighting - SKU1065,Lighting,Convention Masters,87.71,130.82,39,Zone-B03,10
+SKU1066,Tech Equipment - SKU1066,Tech Equipment,StageWorld,228.48,350.17,52,Zone-D13,14
+SKU1067,Audio/Visual - SKU1067,Audio/Visual,DecorPlus,397.25,558.02,90,Zone-C13,10
+SKU1068,Furniture - SKU1068,Furniture,TechRental Inc,107.28,166.15,7,Zone-D11,10
+SKU1069,Staging - SKU1069,Staging,TechRental Inc,1119.54,2777.27,136,Zone-A13,14
+SKU1070,Audio/Visual - SKU1070,Audio/Visual,EventPro Supply,567.79,856.54,118,Zone-B02,7
+SKU1071,Tech Equipment - SKU1071,Tech Equipment,StageWorld,104.37,152.54,97,Zone-C14,7
+SKU1072,Lighting - SKU1072,Lighting,TechRental Inc,54.85,86.09,89,Zone-B03,3
+SKU1073,Audio/Visual - SKU1073,Audio/Visual,Convention Masters,279.58,395.98,39,Zone-B05,10
+SKU1074,Lighting - SKU1074,Lighting,DecorPlus,286.94,439.74,65,Zone-C06,14
+SKU1075,Lighting - SKU1075,Lighting,Convention Masters,291.18,394.27,6,Zone-C19,10
+SKU1076,Tech Equipment - SKU1076,Tech Equipment,CateringSource,99.37,166.32,62,Zone-A10,14
+SKU1077,Lighting - SKU1077,Lighting,DecorPlus,245.66,362.0,109,Zone-C03,14
+SKU1078,Catering - SKU1078,Catering,EventPro Supply,343.59,638.35,27,Zone-D12,10
+SKU1079,Staging - SKU1079,Staging,TechRental Inc,376.14,760.45,69,Zone-D15,10
+SKU1080,Decor - SKU1080,Decor,StageWorld,344.39,642.15,22,Zone-C15,5
+SKU1081,Security - SKU1081,Security,DecorPlus,253.87,381.62,7,Zone-D11,5
+SKU1082,Security - SKU1082,Security,Convention Masters,158.06,222.34,71,Zone-C18,3
+SKU1083,Furniture - SKU1083,Furniture,EventPro Supply,115.51,176.17,142,Zone-B16,10
+SKU1084,Security - SKU1084,Security,EventPro Supply,59.9,82.49,62,Zone-C19,7
+SKU1085,Security - SKU1085,Security,DecorPlus,224.1,345.2,140,Zone-C12,10
+SKU1086,Decor - SKU1086,Decor,StageWorld,119.28,154.64,49,Zone-C04,14
+SKU1087,Staging - SKU1087,Staging,Convention Masters,416.38,826.19,150,Zone-C04,5
+SKU1088,Decor - SKU1088,Decor,Convention Masters,160.33,231.17,136,Zone-B09,3
+SKU1089,Audio/Visual - SKU1089,Audio/Visual,DecorPlus,339.89,732.55,125,Zone-A01,14
+SKU1090,Decor - SKU1090,Decor,TechRental Inc,204.52,301.17,13,Zone-C16,3
+SKU1091,Lighting - SKU1091,Lighting,TechRental Inc,172.94,274.71,13,Zone-B05,14
+SKU1092,Decor - SKU1092,Decor,EventPro Supply,397.72,514.95,106,Zone-B17,10
+SKU1093,Security - SKU1093,Security,TechRental Inc,136.51,228.08,109,Zone-C19,14
+SKU1094,Audio/Visual - SKU1094,Audio/Visual,DecorPlus,774.07,1145.15,53,Zone-B09,3
+SKU1095,Staging - SKU1095,Staging,Convention Masters,373.81,588.78,0,Zone-D15,14
+SKU1096,Security - SKU1096,Security,StageWorld,37.24,53.27,72,Zone-D03,5
+SKU1097,Decor - SKU1097,Decor,CateringSource,246.17,453.72,50,Zone-D04,14
+SKU1098,Furniture - SKU1098,Furniture,CateringSource,80.87,114.23,36,Zone-A02,5
+SKU1099,Decor - SKU1099,Decor,DecorPlus,305.86,506.31,73,Zone-D04,10

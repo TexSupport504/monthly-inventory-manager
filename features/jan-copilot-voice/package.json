@@ -13,5 +13,26 @@
   },
   "keywords": ["voice", "copilot", "jan", "vscode", "automation"],
   "author": "TexSupport504",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "vscode": ">=1.70.0"
+  },
+  "activationEvents": [
+    "onCommand:janCopilotVoice.showSettings",
+    "onCommand:janCopilotVoice.simulateTranscription"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "janCopilotVoice.showSettings",
+        "title": "Jan Copilot Voice: Show Settings",
+        "category": "Jan Copilot Voice"
+      },
+      {
+        "command": "janCopilotVoice.simulateTranscription",
+        "title": "Jan Copilot Voice: Simulate Transcription",
+        "category": "Jan Copilot Voice"
+      }
+    ]
+  }
 }

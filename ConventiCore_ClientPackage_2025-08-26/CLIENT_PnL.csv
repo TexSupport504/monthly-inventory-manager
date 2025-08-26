@@ -1,0 +1,4 @@
+sku,description,category,period,units_sold,revenue,cogs,gross_margin,gm_pct,current_stock,avg_inventory_value,gmroi,sell_through,avg_unit_price
+SKU001,Branded Pen,Promotional,2025-09,0,0,0.0,0.0,0,0,0,0,0,0
+SKU002,Small Shipping Box,Packaging,2025-09,0,0,0.0,0.0,0,0,0,0,0,0
+SKU003,T-Shirt Large,Apparel,2025-09,0,0,0.0,0.0,0,0,0,0,0,0
